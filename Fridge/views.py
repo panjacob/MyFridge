@@ -7,4 +7,7 @@ def index(request):
     type.save()
     print(type)
 
-    return render(request, 'index.html')
+    return render(request, 'Fridge/index.html')
+
+def home(response):
+    return render(response, 'Fridge/home.html', {})
