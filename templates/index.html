@@ -6,20 +6,20 @@
 </head>
 <body>
 
-<form method="POST">
-    {% csrf_token %}
-    <input type="text" name="pole1">
-    <input type="submit" value="ok">
-</form>
-
-
-
-<h1>{{ wiadomosc }}</h1>
-{% if testy %}
-{%  for test in testy %}
-    <p>{{ test.pole1 }}</p>
-{% endfor %}
-{% endif %}
+{#<form method="POST">#}
+{#    {% csrf_token %}#}
+{#    <input type="text" name="pole1">#}
+{#    <input type="submit" value="ok">#}
+{#</form>#}
+{##}
+{##}
+{##}
+{#<h1>{{ wiadomosc }}</h1>#}
+{#{% if testy %}#}
+{#{%  for test in testy %}#}
+{#    <p>{{ test.pole1 }}</p>#}
+{#{% endfor %}#}
+{#{% endif %}#}
 
 
 </body>
