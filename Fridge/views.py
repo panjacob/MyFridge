@@ -11,3 +11,9 @@ def index(request):
 
 def home(response):
     return render(response, 'Fridge/home.html', {})
+
+def signin(response):
+    return render(response, 'Fridge/signin.html', {})
+
+def register(response):
+    return render(response, 'Fridge/register.html', {})
