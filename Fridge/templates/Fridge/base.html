@@ -19,19 +19,30 @@ html {
   min-height: 100%;
 }
 body {
+    margin-left: 100px;
+    margin-right: 100px;
   margin-bottom: 60px; /* Margin bottom by footer height */
+    background-image: url("https://online.ahu.edu/wp-content/uploads/2019/03/Healthy-Food-Doesnt-Have-To-Be-Expensive.jpg");
 
 }
 .footer {
   position: absolute;
   bottom: 0;
   width: 100%;
+    margin-left: -100px;
   height: 30px; /* Set the fixed height of the footer here */
   line-height: 30px; /* Vertically center the text there */
   background-color:   #E0E0E0;
     letter-spacing: 2px;
-
 }
+
+.header {
+  border-radius: 20px;
+  border: 10px solid #73AD21;
+  padding: 10px;
+    width: 100%;
+}
+
 </style>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -46,7 +57,7 @@ body {
 
 <div id="header" name="header">
 
-    <header>
+    <header class="header">
 
 <nav class="navbar navbar-light" style="background-color: #00cc00">
 
@@ -96,11 +107,13 @@ body {
 </div>
 
 
-<div id="content" name="content">
+<div style="background-color: white; opacity:0.79;" id="content" name="content">
 
+<main role="main" class="container">
     {% block content %}
         Content-to-replace
     {% endblock content %}
+</main>
 
 </div>
 
