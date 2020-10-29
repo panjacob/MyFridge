@@ -4,9 +4,13 @@
 
 {% block content %}
 
+    <h1 class="mt-5">Main Page</h1>
+    {% if products %}
+        {% for product in products %}
+            <p>{{ product.name }}</p><br>
+        {% endfor %}
+    {% endif %}
 
-
-      <h1 class="mt-5">Main Page</h1>
     <p>Content</p><br>
     <p>Content</p><br>
     <p>Content</p><br>
@@ -21,10 +25,5 @@
     <p>Content</p><br>
     <p>Content</p><br>
     <p>Content</p><br>
-    <p>Content</p><br>
-
-
-
-
 
 {% endblock content %}

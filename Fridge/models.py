@@ -14,6 +14,7 @@ class Unit(Model):
 
 
 class Product(Model):
+    name = CharField(max_length=64)
     type = ForeignKey(Type, on_delete=CASCADE)
     calories = IntegerField()
     carbohydrates = IntegerField()
