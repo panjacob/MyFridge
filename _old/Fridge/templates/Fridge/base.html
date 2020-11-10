@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel=”stylesheet” href=”{% static 'css/sticky-footer.css' %}”>
+  <link rel=”stylesheet” href=”{% static 'css/main.css' %}”>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster&effect=brick-sign">
+
+  <style>
+    .w3-lobster {
+      font-family: "Lobster", Sans-serif;
+    }
+
+    html {
+      position: relative;
+      min-height: 100%;
+    }
+
+    body {
+      margin-left: 100px;
+      margin-right: 100px;
+      margin-bottom: 60px;
+      /* Margin bottom by footer height */
+      background-image: url("https://online.ahu.edu/wp-content/uploads/2019/03/Healthy-Food-Doesnt-Have-To-Be-Expensive.jpg");
+      display: grid;
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      margin-left: -100px;
+      height: 30px;
+      /* Set the fixed height of the footer here */
+      line-height: 30px;
+      /* Vertically center the text there */
+      background-color: #E0E0E0;
+      letter-spacing: 2px;
+    }
+
+    .header {
+      border-radius: 20px;
+      border: 10px solid #73AD21;
+      padding: 10px;
+      width: 100%;
+      margin-bottom: 50px;
+    }
+
+    * {
+      box-model: border-box;
+    }
+
+    body {
+      font-family: sans-serif;
+    }
+
+    #wrapper {
+      width: 100%;
+      text-align: center;
+    }
+
+    body .container {
+      display: inline-block;
+      width: 50%;
+      padding: 10px;
+    }
+
+    h2 {
+      margin: 5px 0;
+      color: #666;
+    }
+
+    table {
+
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    td {
+      color: #333;
+      padding: 10px;
+      border: 1px solid #bbb;
+      position: relative;
+    }
+
+    td button {
+      position: absolute;
+      right: 5px;
+      top: 5px;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      background: #fff;
+      font-size: 12px;
+    }
+
+    td button:hover {
+      outline: none;
+      border-color: #888;
+      cursor: pointer;
+    }
+  </style>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+    integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
+    crossorigin="anonymous"></script>
+
+  <script>
+
+    window.onload = function () {
+      var data = {
+        Products: ['vanilla', 'pistachio', 'squirrels', 'squash', 'mountains'],
+        Fridge: ['chocolate', 'trucks', 'football', 'hard candy', 'valleys']
+      };
+      var tables = {};
+      var moveMe = function () {
+        this.table = tables[this.table === tables.Fridge ? 'Products' : 'Fridge'];
+        this.table.tbody.appendChild(this.tr);
+      };
+      Object.keys(data).forEach(function (key) {
+        var container = document.createElement('div'),
+          table = tables[key] = document.createElement('table'),
+          tbody = table.tbody = document.createElement('tbody');
+        if (key == 'Products') {
+          container.setAttribute('id', 'products');
+        }
+        else {
+          container.setAttribute('id', 'fridge')
+        }
+        data[key].forEach(function (item) {
+          var tr = document.createElement('tr'),
+            td = document.createElement('td');
+          td.innerHTML = item;
+          tr.appendChild(td);
+          tbody.appendChild(tr);
+          var button = document.createElement('button');
+          button.innerHTML = 'Move';
+          button.onclick = moveMe;
+          button.table = table;
+          button.tr = tr;
+          td.appendChild(button);
+        });
+        table.appendChild(tbody);
+        var header = document.createElement('h2');
+        header.innerHTML = key;
+        container.appendChild(header);
+        container.appendChild(table);
+        container.className = 'container';
+        document.getElementById('wrapper').appendChild(container);
+      });
+    };
+
+  </script>
+
+
+  <title>{% block title %}Title-to-replace{% endblock title %}</title>
+</head>
+
+<body>
+
+  <div id="header" name="header">
+    <header class="header">
+      <nav class="navbar navbar-light" style="background-image: linear-gradient(to bottom right, #006400, #7FFF00);">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="home.html">
+          <div class="w3-container w3-lobster font-effect-brick-sign">
+            <p class="w3-xxxlarge">MyFridge</p>
+          </div>
+        </a>
+        <a href="signin.html" class="btn btn-success btn-lg" role="button">Login</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <div class="dropdown-divider"></div>
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Href 1<span class="sr-only">(current)</span></a>
+            </li>
+            <div class="dropdown-divider"></div>
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Href 2</a>
+            </li>
+            <div class="dropdown-divider"></div>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                FAQ
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item">Action</a>
+                <a class="dropdown-item">Another action</a>
+                <a class="dropdown-item">Something else here</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+  </div>
+
+  <div style="background-color: white; opacity:0.85; padding: 25px;" id="content" name="content">
+
+    {% block content %}
+    Content-to-replace
+    {% endblock content %}
+
+  </div>
+
+  <div id="footer" name="footer">
+    <footer class="footer">
+      <div class="w3-container w3-lobster font-effect-brick-sign">
+        <span class="text-muted">PJWSTK Gr. 10 Pro Project</span>
+      </div>
+    </footer>
+  </div>
+
+
+
+
+
+</body>
+
+</html>
