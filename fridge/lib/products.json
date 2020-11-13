@@ -1,0 +1,92 @@
+[
+  {
+    "name": "apple",
+    "ammount": "1",
+    "unit": "",
+    "type": "fruit"
+  },
+  {
+    "name": "orange",
+    "ammount": "1",
+    "unit": "",
+    "type": "fruit"
+  },
+  {
+    "name": "banana",
+    "ammount": "1",
+    "unit": "",
+    "type": "fruit"
+  },
+  {
+    "name": "orange",
+    "ammount": "1",
+    "unit": "",
+    "type": "fruit"
+  },
+  {
+    "name": "kiwi",
+    "ammount": "1",
+    "unit": "",
+    "type": "fruit"
+  },
+  {
+    "name": "pear",
+    "ammount": "1",
+    "unit": "",
+    "type": "fruit"
+  },
+  {
+    "name": "orange",
+    "ammount": "1",
+    "unit": "",
+    "type": "fruit"
+  },
+  {
+    "name": "melon",
+    "ammount": "1",
+    "unit": "",
+    "type": "fruit"
+  },
+  {
+    "name": "mango",
+    "ammount": "1",
+    "unit": "",
+    "type": "fruit"
+  },
+  {
+    "name": "lemon",
+    "ammount": "1",
+    "unit": "",
+    "type": "fruit"
+  },
+  {
+    "name": "beef",
+    "ammount": "1",
+    "unit": "",
+    "type": "meat"
+  },
+  {
+    "name": "lamb",
+    "ammount": "1",
+    "unit": "",
+    "type": "fruit"
+  },
+  {
+    "name": "goat",
+    "ammount": "1",
+    "unit": "",
+    "type": "fruit"
+  },
+  {
+    "name": "chicken",
+    "ammount": "1",
+    "unit": "",
+    "type": "fruit"
+  },
+  {
+    "name": "turkey",
+    "ammount": "1",
+    "unit": "",
+    "type": "fruit"
+  }
+]
