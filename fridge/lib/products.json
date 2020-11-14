@@ -3,90 +3,91 @@
     "name": "apple",
     "ammount": "1",
     "unit": "",
-    "type": "fruit"
+    "type": "fruit",
+    "image_name": "apple.jpeg"
   },
   {
     "name": "orange",
     "ammount": "1",
     "unit": "",
-    "type": "fruit"
+    "type": "fruit",
+    "image_name": "orange.jpg"
   },
   {
     "name": "banana",
     "ammount": "1",
     "unit": "",
-    "type": "fruit"
-  },
-  {
-    "name": "orange",
-    "ammount": "1",
-    "unit": "",
-    "type": "fruit"
+    "type": "fruit",
+    "image_name": "banana.jpeg"
   },
   {
     "name": "kiwi",
     "ammount": "1",
     "unit": "",
-    "type": "fruit"
+    "type": "fruit",
+    "image_name": "kiwi.jpeg"
   },
   {
     "name": "pear",
     "ammount": "1",
     "unit": "",
-    "type": "fruit"
-  },
-  {
-    "name": "orange",
-    "ammount": "1",
-    "unit": "",
-    "type": "fruit"
+    "type": "fruit",
+    "image_name": "pear.jpg"
   },
   {
     "name": "melon",
     "ammount": "1",
     "unit": "",
-    "type": "fruit"
+    "type": "fruit",
+    "image_name": "melon.jpg"
   },
   {
     "name": "mango",
     "ammount": "1",
     "unit": "",
-    "type": "fruit"
+    "type": "fruit",
+    "image_name": "mango.jpg"
   },
   {
     "name": "lemon",
     "ammount": "1",
     "unit": "",
-    "type": "fruit"
+    "type": "fruit",
+    "image_name": "lemon.jpeg"
   },
   {
     "name": "beef",
     "ammount": "1",
     "unit": "",
-    "type": "meat"
+    "type": "meat",
+    "image_name": "beef.png"
   },
   {
     "name": "lamb",
     "ammount": "1",
     "unit": "",
-    "type": "fruit"
+    "type": "meat",
+    "image_name": "lamb.png"
   },
   {
     "name": "goat",
     "ammount": "1",
     "unit": "",
-    "type": "fruit"
+    "type": "meat",
+    "image_name": "goat.png"
   },
   {
     "name": "chicken",
     "ammount": "1",
     "unit": "",
-    "type": "fruit"
+    "type": "meat",
+    "image_name": "chicken.png"
   },
   {
     "name": "turkey",
     "ammount": "1",
     "unit": "",
-    "type": "fruit"
+    "type": "meat",
+    "image_name": "turkey.jpeg"
   }
 ]

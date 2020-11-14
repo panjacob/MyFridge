@@ -16,6 +16,7 @@ class Unit(Model):
 class Product(Model):
     name = CharField(max_length=64, null=True)
     type = ForeignKey(Type, null=True, on_delete=CASCADE)
+    img_name = CharField(max_length=64, null=True)
     # Narazie nie potrzebne
     # calories = IntegerField()
     # carbohydrates = IntegerField()

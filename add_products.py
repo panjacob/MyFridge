@@ -11,7 +11,8 @@ fridge, ok = Fridge.objects.get_or_create(id=0)
 for x in data:
     print(x)
     product, ok = Product.objects.get_or_create(name=x['name'], ammount=x['ammount'])
-    typex, ok = Type.objects.get_or_create(type=" ")
+    product.img_name = x['image_name']
+    typex, ok = Type.objects.get_or_create(type=x['type'])
     unit, ok = Unit.objects.get_or_create(unit=x['unit'])
     product.type = typex
     product.unit = unit
