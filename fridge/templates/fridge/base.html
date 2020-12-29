@@ -1,160 +1,382 @@
-<!doctype html>
+<!DOCTYPE html>
 {% load static %}
 <html lang="en">
-
 <head>
-  <!-- BOOTSTRAP -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <!-- /BOOTSTRAP -->
+    <meta charset="UTF-8">
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+<link rel=”stylesheet” href=”{% static 'css/sticky-footer.css' %}”>
+<link rel=”stylesheet” href=”{% static 'css/main.css' %}”>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster&effect=brick-sign">
 
-  <!-- TITLE -->
-  {% if title %}
-  <title>myFridge - {{ title }}</title>
-  {% else %}
-  <title>myFridge</title>
-  {% endif %}
+<style>
 
-  <!-- CSS (temporary; to be moved to static files) -->
-  <style>
-    .w3-lobster {
-      font-family: "Lobster", Sans-serif;
+    @media screen and (min-width:960px)  {
+
     }
 
-    html {
-      position: relative;
-      min-height: 100%;
+.w3-lobster {
+  font-family: "Lobster", Sans-serif;
+}
+html {
+    position: relative;
+    min-height: 100%;
+    min-width: 650px;
+}
+
+body {
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 60px; /* Margin bottom by footer height */
+    background-image: url("https://online.ahu.edu/wp-content/uploads/2019/03/Healthy-Food-Doesnt-Have-To-Be-Expensive.jpg");
+    display: grid;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin-left: -100px;
+    height: 30px; /* Set the fixed height of the footer here */
+    line-height: 30px; /* Vertically center the text there */
+    background-color:   #E0E0E0;
+    letter-spacing: 2px;
+}
+
+.header {
+    text-align: center;
+    border-radius: 20px;
+    border: 10px solid #73AD21;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+* {
+  box-model: border-box;
+}
+body {
+  font-family: sans-serif;
+}
+#wrapper {
+    width: 100%;
+    text-align: center;
+}
+body .container {
+  display: inline-block;
+  width: 50%;
+  padding: 10px;
+}
+h2 {
+  margin: 5px 0;
+  color: #666;
+}
+table {
+    table-layout:fixed;
+  width: 100%;
+  border-collapse: collapse;
+}
+td {
+    width: 150px;
+  color: #333;
+  padding: 10px;
+  border: 1px solid #bbb;
+  position: relative;
+}
+td button {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  background: #fff;
+  font-size: 12px;
+}
+td button:hover {
+  outline: none;
+  border-color: #888;
+  cursor: pointer;
+}
+
+table {
+    border: solid 1px;
+    width: 100%;
+    display:block;
+}
+thead {
+    display: inline-block;
+    width: 100%;
+    height: 20px;
+}
+tbody {
+    height: 275px;
+    display: inline-block;
+    width: 100%;
+    overflow: auto;
+}
+
+#recipySearch  {
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  background: #fff;
+  font-size: 30px;
+    margin-top: 25px;
+    margin-left: 50%;
+}
+
+select {
+    margin-left: 5px;
+    height: 40px;
+}
+
+</style>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+
+<script>
+
+    function filterTable() {
+  let dropdown, table, items, cells, product, filter;
+  dropdown = document.getElementById("productDropdown");
+  table = document.getElementById("Productskey");
+  items = table.getElementsByTagName("td");
+  filter = dropdown.value;
+  for (let item of items) {
+    cells = item.getElementsByTagName("p");
+    product = cells[1] || null;
+      console.log(product)
+
+    if (filter === "All" || !product || (filter === product.textContent)) {
+      item.style.display = "";
+    }
+    else {
+      item.style.display = "none";
+    }
+  }
+}
+
+
+    function productsSearchByName() {
+  var input, filter, table, td, tds, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("Productskey");
+  td = table.getElementsByTagName("td");
+  for (i = 0; i < td.length; i++) {
+    tds = td[i].getElementsByTagName("p")[0];
+    if (tds) {
+      txtValue = tds.textContent || tds.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        td[i].style.display = "";
+      } else {
+        td[i].style.display = "none";
+      }
+    }
+  }
+}
+
+function recipySearch() {
+
+    var table, td, tds, i, txtValue;
+  table = document.getElementById("Fridgekey");
+  td = table.getElementsByTagName("td");
+  var result = [];
+  for (i = 0; i < td.length; i++) {
+    tds = td[i].getElementsByTagName("p")[0];
+
+    if (tds) {
+      txtValue = tds.textContent || tds.innerText;
+      result[i]=txtValue;
     }
 
-    body {
-      margin-left: 100px;
-      margin-right: 100px;
-      margin-bottom: 60px;
-      /* Margin bottom by footer height */
-      background-image: url("https://online.ahu.edu/wp-content/uploads/2019/03/Healthy-Food-Doesnt-Have-To-Be-Expensive.jpg");
-      display: grid;
     }
+  console.log(result);
 
-    .footer {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      margin-left: -100px;
-      height: 30px;
-      /* Set the fixed height of the footer here */
-      line-height: 30px;
-      /* Vertically center the text there */
-      background-color: #E0E0E0;
-      letter-spacing: 2px;
+}
+
+
+var img = "https://blog.rahulbhutani.com/wp-content/uploads/2020/05/Screenshot-2018-12-16-at-21.06.29.png"
+window.onload = function () {
+  var data = {
+    Products: [{name:'vanilla',type:'spice',image_name:img},{name:'pistachio',type:'fruit',image_name:img},{name:'squirrels',type:'vegetable',image_name:img},{name:'squash',type:'spice',image_name:img},{name:'mountains',type:'spice',image_name:img}],
+    Fridge: [{name:'chocolate',type:'spice',image_name:img},{name:'trucks',type:'spice',image_name:img},{name:'football',type:'spice',image_name:img},{name:'hard candy',type:'spice',image_name:img},{name:'valleys',type:'spice',image_name:img}]
+  };
+
+var byName = data.Products.slice(0);
+byName.sort(function(a,b) {
+    var x = a.name.toLowerCase();
+    var y = b.name.toLowerCase();
+    return x < y ? -1 : x > y ? 1 : 0;
+});
+
+  data.Products = byName;
+
+  var tables = {};
+
+  var moveMe = function () {
+    this.table = tables[this.table === tables.Fridge ? 'Products' : 'Fridge'];
+    this.table.tbody.appendChild(this.td);
+  };
+
+  Object.keys(data).forEach(function (key) {
+    var container = document.createElement('div'),
+        table = tables[key] = document.createElement('table'),
+        tbody = table.tbody = document.createElement('tbody');
+    if(key == 'Products'){
+        container.setAttribute('id','products');
+        var input = document.createElement("input");
+        input.setAttribute('type','text')
+        input.setAttribute('id','myInput')
+        input.setAttribute('onkeyup','productsSearchByName()')
+        input.setAttribute('placeholder','Search by names..')
+        input.setAttribute('title','Type in a product name')
+        container.append(input);
+        var select = document.createElement("select");
+        select.setAttribute("id", "productDropdown");
+        select.setAttribute('oninput',"filterTable()")
+        container.append(select);
+
+        var opt0 = document.createElement("option");
+            opt0.setAttribute("value", "All");
+            var nod0 = document.createTextNode("All");
+            opt0.appendChild(nod0);
+            select.appendChild(opt0);
+        var opt = document.createElement("option");
+            opt.setAttribute("value", "fruit");
+            var nod = document.createTextNode("fruit");
+            opt.appendChild(nod);
+            select.appendChild(opt);
+        var opt2 = document.createElement("option");
+            opt2.setAttribute("value", "spice");
+            var nod2 = document.createTextNode("spice");
+            opt2.appendChild(nod2);
+            select.appendChild(opt2);
+        var opt3 = document.createElement("option");
+            opt3.setAttribute("value", "vegetable");
+            var nod3 = document.createTextNode("vegetable");
+            opt3.appendChild(nod3);
+            select.appendChild(opt3);
+
     }
+    else {
+        container.setAttribute('id','fridge')
 
-    .header {
-      border-radius: 20px;
-      border: 10px solid #73AD21;
-      padding: 10px;
-      width: 100%;
-      margin-bottom: 50px;
     }
+    data[key].forEach(function (item) {
+      var //tr = document.createElement('tr'),
+          td = document.createElement('td');
+      td.innerHTML = '<img src='+ item.image_name +' width="140" height="140"/><p>'+ item.name + '</p><br><p>'+ item.type +'</p>';
+      //tr.appendChild(td);
+      tbody.appendChild(td);
+      var button = document.createElement('button');
+          button.innerHTML = 'Move';
+      button.onclick = moveMe;
+      button.table = table;
+      button.td = td;
+      td.appendChild(button);
+    });
+    table.appendChild(tbody);
+    var header = document.createElement('h2');
+    header.innerHTML = key;
+    container.appendChild(header);
+    table.setAttribute('id',key+"key");
+    container.appendChild(table);
+    container.className = 'container';
+    document.getElementById('wrapper').appendChild(container);
 
-    /*
-    * {
-      box-model: border-box;
-    }
-    */
+  });
+  var search = document.getElementById('wrapper');
+    var searchButton = document.createElement("button");
+    searchButton.setAttribute('onClick','recipySearch()');
+    searchButton.setAttribute('id', "recipySearch")
+    searchButton.innerHTML = 'Search';
+    search.appendChild(searchButton);
+};
 
-    body {
-      font-family: sans-serif;
-    }
+</script>
 
-    #wrapper {
-      width: 100%;
-      text-align: center;
-    }
 
-    body .container {
-      display: inline-block;
-      width: 50%;
-      padding: 10px;
-    }
-
-    h2 {
-      margin: 5px 0;
-      color: #666;
-    }
-
-    table {
-
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    td {
-      color: #333;
-      padding: 10px;
-      border: 1px solid #bbb;
-      position: relative;
-    }
-
-    td button {
-      position: absolute;
-      right: 5px;
-      top: 5px;
-      border: 2px solid #ccc;
-      border-radius: 5px;
-      background: #fff;
-      font-size: 12px;
-    }
-
-    td button:hover {
-      outline: none;
-      border-color: #888;
-      cursor: pointer;
-    }
-  </style>
-
+    <title>{% block title %}Title-to-replace{% endblock title %}</title>
 </head>
-
 <body>
-  <!-- BOOTSTRAP -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
-  <!-- /BOOTSTRAP -->
+
+<div id="header" name="header">
+
+    <header class="header">
+
+<nav class="navbar navbar-light" style="background-image: linear-gradient(to bottom right, #006400, #7FFF00);">
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+
+    <a class="navbar-brand" href="home.html">
+        <div class="w3-container w3-lobster font-effect-brick-sign">
+            <p class="w3-xxxlarge">MyFridge</p>
+        </div>
+    </a>
+
+    <a href="signin.html" class="btn btn-success btn-lg" role="button">Login</a>
 
 
-  <!-- HEADER -->
-  {% include "fridge/header.html" %}
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+        <div class="dropdown-divider"></div>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Href 1<span class="sr-only">(current)</span></a>
+      </li>
+        <div class="dropdown-divider"></div>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Href 2</a>
+      </li>
+        <div class="dropdown-divider"></div>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          FAQ
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" >Action</a>
+          <a class="dropdown-item" >Another action</a>
+          <a class="dropdown-item" >Something else here</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
 
-  <main role="main" class="container">
-    <!-- MESSAGES -->
-    {% if messages %}
-    {% for message in messages %}
-    <div class="alert alert-{{ message.tags }}">
-      {{ message }}
-    </div>
-    {% endfor %}
-    {% endif %}
+    </header>
 
-    <!-- CONTENT -->
-    <div style="background-color: white; opacity:0.85; padding: 25px;" id="content" name="content">
-      {% block content %}{% endblock %}
-    </div>
-  </main>
 
-  <!-- FOOTER -->
-  {% include "fridge/footer.html" %}
+
+
+</div>
+
+
+<div style="background-color: white; opacity:0.85; padding: 25px;" id="content" name="content">
+
+    {% block content %}
+        Content-to-replace
+    {% endblock content %}
+
+</div>
+
+
+<div id="footer" name="footer">
+
+    <footer class="footer">
+      <div class="w3-container w3-lobster font-effect-brick-sign">
+        <span class="text-muted">PJWSTK Gr. 10 Pro Project</span>
+      </div>
+    </footer>
+
+</div>
+
+
+
+
 
 </body>
-
 </html>
