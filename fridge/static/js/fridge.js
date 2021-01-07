@@ -81,7 +81,7 @@ function recipySearch() {
 
 fetch('http://127.0.0.1:8000/fridge', {
   method: "POST",
-  body: result
+  body: JSON.stringify(result)
 }).then(res => {
   console.log("Request complete! response:", res);
 });
