@@ -7,6 +7,7 @@ def products_to_json(products):
         product = products[i]
         print(products)
         product_json = {}
+        product_json['id'] = product.id
         product_json['name'] = product.name
         product_json['type'] = product.type.type
         product_json['img_name'] = product.img_name
