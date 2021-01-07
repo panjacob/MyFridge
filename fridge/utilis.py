@@ -4,7 +4,6 @@ from rest_framework.utils import json
 def products_to_json(products):
     products_arr = []
     for product in products:
-        print(products)
         product_json = {}
         product_json['id'] = product.id
         product_json['name'] = product.name
