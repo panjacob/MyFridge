@@ -28,6 +28,8 @@ def get_products_from_fridge(request):
             products.append(x.product)
         products_json = u.products_to_json(products)
         return HttpResponse(products_json, content_type="text/json-comment-filtered")
+    if request.method == 'POST':
+        print(request.POST)
 
 
 def fridge(request):
