@@ -1,13 +1,14 @@
 from rest_framework.utils import json
 
-def fridgeproduct_to_productsjson(fridge_product):
-    products = []
-    for i in range(0, len(fridge_product)):
-        product = fridge_product[i].product
+
+def products_to_json(products):
+    products_arr = []
+    for i in range(0, len(products)):
+        product = products[i]
+        print(products)
         product_json = {}
         product_json['name'] = product.name
         product_json['type'] = product.type.type
         product_json['img_name'] = product.img_name
-        product_json['ammount'] = product.ammount
-        products.append(product_json)
-    return json.dumps(products)
+        products_arr.append(product_json)
+    return json.dumps(products_arr)
