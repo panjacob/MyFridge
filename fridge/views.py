@@ -30,6 +30,7 @@ def get_products_from_fridge(request):
         return HttpResponse(products_json, content_type="text/json-comment-filtered")
     if request.method == 'POST':
         print(request.POST)
+        return HttpResponse({}, content_type="text/json-comment-filtered")
 
 
 def fridge(request):
