@@ -79,9 +79,12 @@ function recipySearch() {
 
     }
 
+    var cookie = document.getElementById("cid").innerHTML;
+
 fetch('http://127.0.0.1:8000/fridge', {
   method: "POST",
-  body: JSON.stringify(result)
+    headers: { "X-CSRFToken": cookie.toString() },
+  body: result
 }).then(res => {
   console.log("Request complete! response:", res);
 });
