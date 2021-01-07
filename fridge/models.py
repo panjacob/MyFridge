@@ -18,6 +18,7 @@ class Product(Model):
 
 
 class Fridge(Model):
+    # owner = ForeignKey() id usera ktory jest zalogowany
     pass
 
 

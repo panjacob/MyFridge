@@ -11,9 +11,21 @@ def home(request):
 
 
 # http://127.0.0.1:8000/products
-def get_products_from_fridge(request):
+def get_products(request):
     if request.method == 'GET':
         products = models.Product.objects.all()
+        products_json = u.products_to_json(products)
+        return HttpResponse(products_json, content_type="text/json-comment-filtered")
+
+
+# http://127.0.0.1:8000/fridge
+def get_products_from_fridge(request):
+    fridge_id = 0 #
+    if request.method == 'GET':
+        fridge_product = models.FridgeProduct.objects.filter(fridge=fridge_id)
+        products = []
+        for x in fridge_product:
+            products.append(x.product)
         products_json = u.products_to_json(products)
         return HttpResponse(products_json, content_type="text/json-comment-filtered")
 
