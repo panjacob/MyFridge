@@ -1,5 +1,5 @@
 {% extends "fridge/base.html" %}
-
+{% load static %}
 {% block content %}
 {#    <input type="hidden" value="">#}
 
@@ -247,6 +247,7 @@ byName.sort(function(a,b) {
 <p>Po wybraniu produktow ktore mamy w lodowce mozemy skierowac sie spowrotem na strone glowna gdzie wybieramy pordukty z ktorych chcemy wykonsc posilek.</p><br>
 <p>Po wybraniu porduktow klikamy przycisk Search by wyszukac przepisy z produktow ktore wybralismy.</p><br>
 <p>Na dole strony wyswitela nam sie przepisy zawierajace produkty z pola Recipy.</p><br>
+<img src="{% static 'products_img/apple.jpeg' %}" alt="My image">
 
     <a href="fridge.html" class="btn btn-primary">Go to Fridge</a>
 
