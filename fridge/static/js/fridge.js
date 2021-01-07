@@ -84,7 +84,8 @@ function recipySearch() {
 fetch('http://127.0.0.1:8000/fridge', {
   method: "POST",
     headers: { "X-CSRFToken": cookie.toString() },
-  body: result
+    body: result.toString(),
+  data: result.toString()
 }).then(res => {
   console.log("Request complete! response:", res);
 });
