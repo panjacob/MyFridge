@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Spaghetti",
+    "image_name": "spaghetti.jpg",
+    "short_description": "Przepis na klasyczne spaghetti Bolognese. Klasyka włoskiej kuchni i jednocześnie ulubione danie moich dzieci.",
+    "long_description": "Składniki na ok. 3- 4 porcje:\n300 g mięsa mielonego\n1 cebula\n2 ząbki czosnku\n1 marchewka\n2 łyżki oleju\n1 puszka krojonych pomidorów bez skórki lub pulpy pomidorowej (puszka 400g)\n3 łyżki przecieru pomidorowego\n100 ml bulionu mięsnego lub warzywnego\n2 łyżeczki suszonego oregano\nsól, pieprz\n300 g makaronu Spaghetti\nświeżo starty parmezan do posypania \n\n\n\n\n Cebulę i czosnek obrać i poszatkować.\nMarchewkę umyć, obrać i pokroić w drobną kostkę.\nCebulę i czosnek chwilkę podsmażyć na oleju. Dodać mięso mielone i marchewkę. Wszystko razem chwilę podsmażyć, aż mięso straci kolor różowy. Dodać pomidory z puszki (razem z sosem z puszki), przecier pomidorowy i bulion. Całość dusić pod przykryciem na niskiej mocy palnika ok. 20 minut. Przyprawić solą, pieprzem i oregano.\nSpaghetti ugotować w osolonej wodzie według przepisu na opakowaniu. Odcedzić na durszlaku. (Nie przelewać zimną wodą).\nSpaghetti rozłożyć na talerzach. Polać sosem z mięsem i posypać parmezanem.",
+    "products": [
+      49,
+      67,
+      91,
+      93,
+      118,
+      84,
+      123
+    ]
+  }
+]

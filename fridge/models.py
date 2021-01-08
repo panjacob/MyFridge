@@ -35,5 +35,5 @@ class Recipe(Model):
 
 
 class RecipeProduct(Model):
-    recpie = ForeignKey(Recipe, null=True, on_delete=CASCADE)
+    recipe = ForeignKey(Recipe, null=True, on_delete=CASCADE)
     product = ForeignKey(Product, null=True, on_delete=CASCADE)

@@ -10,31 +10,16 @@ def home(request):
     return render(request, 'fridge/home.html', context)
 
 
-# http://127.0.0.1:8000/products
-def get_products(request):
-    if request.method == 'GET':
-        products = models.Product.objects.all()
-        products_json = u.products_to_json(products)
-        return HttpResponse(products_json, content_type="text/json-comment-filtered")
+def fridge(request):
+    context = {}
+    context["title"] = "Fridge"
+    return render(request, 'fridge/fridge.html', context)
 
 
-def get_products_id_from_request(request):
-    new_products_id = []
-    decoded = request.body.decode('utf-8')
-    array = decoded.split(',')
-    if array == ['']:
-        return []
-    for product_id in array:
-        new_products_id.append(int(product_id))
-    return new_products_id
-
-
-def get_products_id_from_fridge(id):
-    fridge_product = models.FridgeProduct.objects.filter(fridge=id)
-    old_products_id = []
-    for x in fridge_product:
-        old_products_id.append(x.product.id)
-    return old_products_id
+def recipy(request):
+    context = {}
+    context["title"] = "Recipy"
+    return render(request, 'fridge/recipy.html', context)
 
 
 # http://127.0.0.1:8000/fridge
@@ -48,8 +33,8 @@ def get_products_from_fridge(request):
         products_json = u.products_to_json(products)
         return HttpResponse(products_json, content_type="text/json-comment-filtered")
     if request.method == 'POST':
-        new_products_id = get_products_id_from_request(request)
-        old_products_id = get_products_id_from_fridge(id=fridge_id)
+        new_products_id = u.get_products_id_from_request(request)
+        old_products_id = u.get_products_id_from_fridge(id=fridge_id)
 
         for new_product in new_products_id:
             if new_product not in old_products_id:
@@ -58,19 +43,34 @@ def get_products_from_fridge(request):
             if old_product not in new_products_id:
                 models.FridgeProduct.objects.get(fridge_id=fridge_id, product_id=old_product).delete()
 
-        print(get_products_id_from_fridge(id=fridge_id))
+        print(u.get_products_id_from_fridge(id=fridge_id))
 
         return HttpResponse({'body': 'OK'}, content_type="text/json-comment-filtered")
     print(request)
 
 
-def fridge(request):
-    context = {}
-    context["title"] = "Fridge"
-    return render(request, 'fridge/fridge.html', context)
+# http://127.0.0.1:8000/products
+def get_products(request):
+    if request.method == 'GET':
+        products = models.Product.objects.all()
+        products_json = u.products_to_json(products)
+        return HttpResponse(products_json, content_type="text/json-comment-filtered")
 
 
-def recipy(request):
-    context = {}
-    context["title"] = "Recipy"
-    return render(request, 'fridge/recipy.html', context)
+# http://127.0.0.1:8000/recipe?id=1
+def get_recipe(request):
+    if request.method == 'GET':
+        recipe_id = request.GET.get('id', 1)
+        recipe = models.Recipe.objects.get(id=recipe_id)
+        recipe_product = models.RecipeProduct.objects.filter(recipe_id=recipe_id)
+        recipe_json = u.recipe_to_json(recipe, recipe_product)
+        print(recipe_json)
+        return HttpResponse(recipe_json, content_type="text/json-comment-filtered")
+
+
+# http://127.0.0.1:8000/recipes
+def get_recipes(request):
+    if request.method == 'GET':
+        recipes = models.Recipe.objects.all()
+        recipes_json = u.recipes_to_json(recipes)
+        return HttpResponse(recipes_json, content_type="text/json-comment-filtered")
