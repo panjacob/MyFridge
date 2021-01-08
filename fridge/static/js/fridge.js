@@ -8,15 +8,15 @@ fetch(url_p)
         console.log('Checkout this JSON! ', products_json);
 
         fetch(url_f)
-    .then(res => res.json())
-    .then((fridge_json) => {
-        console.log('Checkout this JSON! ', fridge_json);
+            .then(res => res.json())
+            .then((fridge_json) => {
+                console.log('Checkout this JSON! ', fridge_json);
 
-        showProducts(products_json,fridge_json)
-    })
-    .catch(err => {
-        throw err
-    });
+                showProducts(products_json, fridge_json)
+            })
+            .catch(err => {
+                throw err
+            });
 
     })
     .catch(err => {
@@ -79,23 +79,19 @@ function recipySearch() {
 
     }
 
-    var cookie = document.getElementById("cid").innerHTML;
+    let cookie = document.getElementById("cid").innerHTML;
 
-fetch('http://127.0.0.1:8000/fridge', {
-  method: "POST",
-    headers: { "X-CSRFToken": cookie.toString() },
-    body: result.toString(),
-  data: result.toString()
-}).then(res => {
-  console.log("Request complete! response:", res);
-});
-
-    console.log(result);
-
+    fetch('fridge', {
+        method: "POST",
+        headers: {"X-CSRFToken": cookie.toString()},
+        body: result.toString(),
+    }).then(res => {
+        console.log("Zapisano!");
+    });
 }
 
 
-function showProducts(prod,frid) {
+function showProducts(prod, frid) {
     var data = {
         Products: prod,
         Fridge: frid
@@ -183,11 +179,11 @@ function showProducts(prod,frid) {
 
     });
     var search = document.getElementById('wrapper');
-    var searchButton = document.createElement("button");
+    var saveButton = document.createElement("button");
     //searchButton.setAttribute('onClick','recipySearch()');
-    searchButton.setAttribute('onClick','recipySearch()');
-    searchButton.setAttribute('id', "recipySearch")
-    searchButton.innerHTML = 'Save';
-    search.appendChild(searchButton);
+    saveButton.setAttribute('onClick', 'recipySearch()');
+    saveButton.setAttribute('id', "recipySearch")
+    saveButton.innerHTML = 'Save';
+    search.appendChild(saveButton);
 };
 

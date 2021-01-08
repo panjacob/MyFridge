@@ -11,3 +11,4 @@ def products_to_json(products):
         product_json['img_name'] = product.img_name
         products_arr.append(product_json)
     return json.dumps(products_arr)
+
