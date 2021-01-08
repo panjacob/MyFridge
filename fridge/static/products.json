@@ -1,1008 +1,945 @@
 [
   {
     "name": "apple",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "fruit",
     "image_name": "apple.jpeg"
   },
   {
     "name": "orange",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "fruit",
     "image_name": "orange.jpg"
   },
   {
     "name": "banana",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "fruit",
     "image_name": "banana.jpeg"
   },
   {
     "name": "kiwi",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "fruit",
     "image_name": "kiwi.jpeg"
   },
   {
     "name": "pear",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "fruit",
     "image_name": "pear.jpg"
   },
   {
     "name": "melon",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "fruit",
     "image_name": "melon.jpg"
   },
   {
     "name": "mango",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "fruit",
     "image_name": "mango.jpg"
   },
   {
     "name": "lemon",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "fruit",
     "image_name": "lemon.jpeg"
   },
   {
     "name": "Acerola",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "fruit",
     "image_name": "acerola_small.gif"
   },
   {
     "name": "Apricots",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "fruit",
     "image_name": "apricot_small.jpg"
   },
   {
     "name": "Avocado",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "fruit",
     "image_name": "avocado_small.jpg"
   },
   {
     "name": "Blackberries",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "fruit",
     "image_name": "BlackberrySmall.jpg"
   },
   {
     "name": "Blackcurrant",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "fruit",
     "image_name": "blackcurrant_small.gif"
   },
   {
     "name": "Cherries",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "fruit",
     "image_name": "cherries_small.jpg"
   },
   {
     "name": "Clementine",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "fruit",
     "image_name": "clementine_small.gif"
   },
   {
     "name": "Cranberries",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "fruit",
     "image_name": "Cranberriesforwebsite1.jpg"
   },
   {
     "name": "Figs",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "fruit",
     "image_name": "fig_small.gif"
   },
   {
     "name": "Grapefruit",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "fruit",
     "image_name": "grapefruit_samll.gif"
   },
   {
     "name": "Grapes",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "fruit",
     "image_name": "grapes_small.jpg"
   },
   {
     "name": "Java-Plum",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "fruit",
     "image_name": "javplum_small.gif"
   },
   {
     "name": "Mandarin",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "fruit",
     "image_name": "mandarin_small.gif"
   },
   {
     "name": "Papaya",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "fruit",
     "image_name": ""
   },
   {
     "name": "Pineapple",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "fruit",
     "image_name": "pineapple_small.jpg"
   },
   {
     "name": "Pomegranate",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "fruit",
     "image_name": "pomegranate_small.jpg"
   },
   {
     "name": "Pummelo",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "fruit",
     "image_name": "pummelo_small.gif"
   },
   {
     "name": "Raspberries",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "fruit",
     "image_name": "raspberries_small.gif"
   },
   {
     "name": "Strawberries",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "fruit",
     "image_name": "strawberries_small-e1426772485578.gif"
   },
   {
     "name": "Watermelon",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "fruit",
     "image_name": "watermelon_small.gif"
   },
   {
     "name": "Tangerine",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "fruit",
     "image_name": "tangerine_small.gif"
   },
   {
     "name": "beef",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "meat",
     "image_name": "beef.png"
   },
   {
     "name": "lamb",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "meat",
     "image_name": "lamb.png"
   },
   {
     "name": "goat",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "meat",
     "image_name": "goat.png"
   },
   {
     "name": "chicken",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "meat",
     "image_name": "chicken.png"
   },
   {
     "name": "turkey",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "meat",
     "image_name": "turkey.jpeg"
   },
   {
     "name": "Amaranth Leaves",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "vegetable",
     "image_name": "amaranthleaves_small.jpg"
   },
   {
     "name": "Arrowroot",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "vegetable",
     "image_name": "arrowroot_small.gif"
   },
   {
-    "name": "",
-    "ammount": "1",
-    "unit": "",
-    "type": "vegetable",
-    "image_name": ""
-  },
-  {
     "name": "Artichoke",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "vegetable",
     "image_name": "artichoke_small.gif"
   },
   {
     "name": "Arugula",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "vegetable",
     "image_name": "arugula_small.gif"
   },
   {
     "name": "Asparagus",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "vegetable",
     "image_name": "asparagus_small.jpg"
   },
   {
-    "name": "",
-    "ammount": "1",
-    "unit": "",
-    "type": "vegetable",
-    "image_name": ""
-  },
-  {
     "name": "Bamboo Shoots",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "vegetable",
     "image_name": "bamboshoots_small.gif"
   },
   {
     "name": "Beans, Green",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "vegetable",
     "image_name": "greenbeans_small.gif"
   },
   {
-    "name": "",
-    "ammount": "1",
-    "unit": "",
-    "type": "vegetable",
-    "image_name": ""
-  },
-  {
     "name": "Beets",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "vegetable",
     "image_name": "beets_small.gif"
   },
   {
-    "name": "",
-    "ammount": "1",
-    "unit": "",
-    "type": "vegetable",
-    "image_name": ""
-  },
-  {
     "name": "Belgian Endive",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "vegetable",
     "image_name": "belgianendive_small.gif"
   },
   {
     "name": "Broadbeans (Fava Beans)",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "vegetable",
     "image_name": ""
   },
   {
     "name": "Broccoli",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "vegetable",
     "image_name": "broccoli_small.jpg"
   },
   {
     "name": "Brussel Sprouts",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "vegetable",
     "image_name": "brusselssprouts_small.jpg"
   },
   {
     "name": "Cabbage, Green",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "vegetable",
     "image_name": "cabbagegreen_small.gif"
   },
   {
     "name": "Cabbage, Red",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "vegetable",
     "image_name": "redcabbage_small-e1420762601186-150x142.jpg"
   },
   {
     "name": "Carrot",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "vegetable",
     "image_name": "carrots_small.jpg"
   },
   {
     "name": "Cauliflower",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "vegetable",
     "image_name": "cauliflower_small.jpg"
   },
   {
     "name": "Celeriac",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "vegetable",
     "image_name": "celeryroot_small.jpg"
   },
   {
     "name": "Celery",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "vegetable",
     "image_name": "celery_small.jpg"
   },
   {
     "name": "Corn",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "vegetable",
     "image_name": "corn_small.jpg"
   },
   {
     "name": "Cucumber",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "vegetable",
     "image_name": "cucumber_small.jpg"
   },
   {
     "name": "Dandelion Greens",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "vegetable",
     "image_name": "dandeliongreens_small.gif"
   },
   {
     "name": "Edamame",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "vegetable",
     "image_name": "edamame_small.gif"
   },
   {
     "name": "Eggplant",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "vegetable",
     "image_name": "eggplant_small.gif"
   },
   {
     "name": "Ginger Root",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "vegetable",
     "image_name": "gingerroot_small.gif"
   },
   {
     "name": "Jicama",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "vegetable",
     "image_name": "jicama_small.gif"
   },
   {
     "name": "Kale",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "vegetable",
     "image_name": "kale_small.gif"
   },
   {
     "name": "Kohlrabi",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "vegetable",
     "image_name": "kohlrabi_small.gif"
   },
   {
     "name": "Lettuce, Iceberg",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "vegetable",
     "image_name": "lettuceiceberg_small.gif"
   },
   {
     "name": "Lettuce, Leaf",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "vegetable",
     "image_name": "lettuce_small.gif"
   },
   {
     "name": "Lettuce, Romaine",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "vegetable",
     "image_name": "romaine_small.gif"
   },
   {
     "name": "Mushrooms",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "vegetable",
     "image_name": "mushrooms_small.gif"
   },
   {
     "name": "Onion (Red)",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "vegetable",
     "image_name": "Red-Onion-Tiny.jpg"
   },
   {
-    "name": "",
-    "ammount": "1",
-    "unit": "",
-    "type": "vegetable",
-    "image_name": ""
-  },
-  {
     "name": "Onion",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "vegetable",
     "image_name": "onionwhite_small.gif"
   },
   {
     "name": "Parsnip",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "vegetable",
     "image_name": "parsnip_small.gif"
   },
   {
     "name": "Peas, Green",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "vegetable",
     "image_name": "peas_small.gif"
   },
   {
     "name": "Pepper, Green",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "vegetable",
     "image_name": "peppergreen_small.jpg"
   },
   {
     "name": "Pepper, Sweet Red",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "vegetable",
     "image_name": "pepperred_small.jpg"
   },
   {
     "name": "Potato, Red",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "vegetable",
     "image_name": "redpotato_small.gif"
   },
   {
     "name": "Potato, White",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "vegetable",
     "image_name": "whitepotato_small.gif"
   },
   {
     "name": "Potato, Yellow",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "vegetable",
     "image_name": "potatoes_small.jpg"
   },
   {
     "name": "Pumpkin",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "vegetable",
     "image_name": "pumpkin_small.jpg"
   },
   {
     "name": "Radicchio",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "vegetable",
     "image_name": "radicchio_small.gif"
   },
   {
     "name": "Radishes",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "vegetable",
     "image_name": "radishes_small.gif"
   },
   {
-    "name": "",
-    "ammount": "1",
-    "unit": "",
-    "type": "vegetable",
-    "image_name": ""
-  },
-  {
     "name": "Shallots",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "vegetable",
     "image_name": "shallots_small.gif"
   },
   {
     "name": "Snow Peas",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "vegetable",
     "image_name": "snowpeas_small.gif"
   },
   {
     "name": "Spaghetti Squash",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "vegetable",
     "image_name": "SpaghettiSquashWebsite.jpg"
   },
   {
     "name": "Spinach",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "vegetable",
     "image_name": "spinach_small.jpg"
   },
   {
     "name": "Squash, Butternut",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "vegetable",
     "image_name": "squash_small.jpg"
   },
   {
     "name": "Sweet Potato",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "vegetable",
     "image_name": "sweetpotato_small.jpg"
   },
   {
     "name": "Tomato",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "vegetable",
     "image_name": "tomatosmall.gif"
   },
   {
     "name": "Turnip",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "vegetable",
     "image_name": "turnip_small.gif"
   },
   {
     "name": "Watercress",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "vegetable",
     "image_name": "watercress_small.gif"
   },
   {
-    "name": "",
-    "ammount": "1",
-    "unit": "",
-    "type": "vegetable",
-    "image_name": ""
-  },
-  {
     "name": "Yam Root",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "vegetable",
     "image_name": "yamroot_small.gif"
   },
   {
     "name": "Zucchini",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "vegetable",
     "image_name": "zucchini_small.gif"
   },
   {
     "name": "Turmeric",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "spice",
     "image_name": "turmeric.jpg"
   },
   {
     "name": "Cinnamon",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "spice",
     "image_name": "cinnamon.jpg"
   },
   {
     "name": "Garlic",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "spice",
     "image_name": "garlic.jpg"
   },
   {
     "name": "Saffron",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "spice",
     "image_name": "saffron.jpg"
   },
   {
     "name": "Pepper",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "spice",
     "image_name": "pepper.jpg"
   },
   {
     "name": "Nutmeg",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "spice",
     "image_name": "nutmeg.jpg"
   },
   {
     "name": "Mace",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "spice",
     "image_name": "mace.jpg"
   },
   {
     "name": "Cayenne Pepper",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "spice",
     "image_name": "cayenne.jpg"
   },
   {
     "name": "Paprika",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "spice",
     "image_name": "paprika.jpg"
   },
   {
     "name": "Chili Pepper",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "spice",
     "image_name": "chili.jpg"
   },
   {
     "name": "Fennel",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "spice",
     "image_name": "fennel-seeds.jpg"
   },
   {
     "name": "Onion Powder",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "spice",
     "image_name": "onion_powder.jpg"
   },
   {
     "name": "Coriander Seeds",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "spice",
     "image_name": "coriander-seeds.jpg"
   },
   {
     "name": "Cumin",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "spice",
     "image_name": "cumin.jpg"
   },
   {
     "name": "Caraway Seed",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "spice",
     "image_name": "caraway-seeds.jpg"
   },
   {
     "name": "Black Cumin",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "spice",
     "image_name": "black-cumin.jpg"
   },
   {
     "name": "Mustard Seeds",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "spice",
     "image_name": "mustard-seeds.jpg"
   },
   {
     "name": "Cardamom",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "spice",
     "image_name": "cardamon.jpg"
   },
   {
     "name": "Clove",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "spice",
     "image_name": "clove.jpg"
   },
   {
     "name": "Celery Seeds",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "spice",
     "image_name": "celery-seeds.jpg"
   },
   {
     "name": "Fenugreek",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "spice",
     "image_name": "fenugreek-seeds.jpg"
   },
   {
     "name": "Allspice",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "spice",
     "image_name": "allspice.jpg"
   },
   {
     "name": "Star Anise",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "spice",
     "image_name": "Chinese-star-anise.jpg"
   },
   {
     "name": "Sumac",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "spice",
     "image_name": "sumac.jpg"
   },
   {
-    "name": "",
-    "ammount": "1",
-    "unit": "",
-    "type": "spice",
-    "image_name": ""
-  },
-  {
     "name": "Poppy Seeds",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "spice",
     "image_name": "poppy-seeds.jpg"
   },
   {
     "name": "Bulgarian yogurt",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "diary",
     "image_name": "Bulgarian_yogurt.JPG"
   },
   {
     "name": "Butter",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "diary",
     "image_name": "125px-Butter_at_the_Borough_Market.jpg"
   },
   {
     "name": "Buttermilk",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "diary",
     "image_name": "Mattha.jpg"
   },
   {
     "name": "Cacik",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "diary",
     "image_name": "125px-Cacik-1.jpg"
   },
   {
     "name": "Cheese",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "diary",
     "image_name": "cheese.jpeg"
   },
   {
     "name": "Clotted cream",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "diary",
     "image_name": "Clotted_cream_(cropped).JPG"
   },
   {
     "name": "Cottage cheese",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "diary",
     "image_name": "Cottagecheese200px.jpg"
   },
   {
     "name": "Cream cheese",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "diary",
     "image_name": "NCI_cream_cheese_bagel.jpg"
   },
   {
     "name": "Custard",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "diary",
     "image_name": "Custard.jpg"
   },
   {
     "name": "Evaporated milk",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "diary",
     "image_name": "Dosenmilch.jpg"
   },
   {
     "name": "Frozen yoghurt",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "diary",
     "image_name": "Cake_Batter_and_Cotton_Candy_Frozen_Yogurt.JPG"
   },
   {
     "name": "Kefir",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "diary",
     "image_name": "125px-Kefir_in_a_glass.jpeg"
   },
   {
     "name": "Milk",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "diary",
     "image_name": "Glass_of_milk_on_tablecloth.jpg"
   },
   {
     "name": "Mozzarella",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "diary",
     "image_name": "homeicobox_mozz.png"
   },
   {
     "name": "Paneer",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "diary",
     "image_name": "Panir_Paneer_Indian_cheese_fresh.jpg"
   },
   {
-    "name": "",
-    "ammount": "1",
-    "unit": "",
-    "type": "diary",
-    "image_name": ""
-  },
-  {
     "name": "Powdered milk",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "diary",
     "image_name": "125px-PowderedMilk.jpg"
   },
   {
     "name": "Processed cheese",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "diary",
     "image_name": "Wrapped_American_cheese_slices.jpg"
   },
   {
     "name": "Sheep milk",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "diary",
     "image_name": "Sheepparlour.jpg"
   },
   {
     "name": "Smetana",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "diary",
     "image_name": "Smietana.JPG"
   },
   {
     "name": "Soft serve",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "diary",
     "image_name": "Soft_Ice_cream.jpg"
   },
   {
     "name": "Whey",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "diary",
     "image_name": "Whey.jpg"
   },
   {
     "name": "Yogurt",
-    "ammount": "1",
+    "amount": "1",
     "unit": "",
     "type": "diary",
     "image_name": "Bulgarian_yogurt (1).JPG"
