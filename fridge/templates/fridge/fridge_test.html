@@ -21,6 +21,7 @@
         
         fridgeproducts.forEach(fridgeproduct => {
             document.getElementById("js-output").innerHTML += "<hr>";
+            document.getElementById("js-output").innerHTML += "<p>id = " + fridgeproduct.product_id + "</p>";
             document.getElementById("js-output").innerHTML += "<p>name = " + fridgeproduct.name + "</p>";
             document.getElementById("js-output").innerHTML += "<p>unit = " + fridgeproduct.unit + "</p>";
             document.getElementById("js-output").innerHTML += "<p>amount = " + fridgeproduct.amount + "</p>";
