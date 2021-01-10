@@ -1,16 +1,29 @@
-let url_f = 'http://127.0.0.1:8000/fridge';
+let url_f = 'http://127.0.0.1:8000/fridge_api';
 
-fetch(url_f)
-    .then(res => res.json())
-    .then((fridge_json) => {
-        console.log('Checkout this JSON! ', fridge_json);
 
-        showProducts(fridge_json)
+const addOrRemove = (array, item) => {
+    const exists = array.includes(item)
+  
+    if (exists) {
+      return array.filter((c) => { return c !== item })
+    } else {
+      const result = array
+      result.push(item)
+      return result
+    }
+}
 
-    })
-    .catch(err => {
-        throw err
-    });
+// fetch(url_f)
+//     .then(res => res.json())
+//     .then((fridge_json) => {
+//         console.log('Checkout this JSON! ', fridge_json);
+
+//         showProducts(fridge_json)
+
+//     })
+//     .catch(err => {
+//         throw err
+//     });
 
 
 function filterTable() {
@@ -52,7 +65,7 @@ function productsSearchByName() {
     }
 }
 
-function recipySearch() {
+function recipeSearch() {
 
     var table, td, tds_id, tds_name, i, txtValue_id, txtValue_name;
     table = document.getElementById("Recipykey");
@@ -81,130 +94,56 @@ function reply_click(clicked_id) {
     console.log(clicked_id);
 }
 
-var img = "https://blog.rahulbhutani.com/wp-content/uploads/2020/05/Screenshot-2018-12-16-at-21.06.29.png"
-var recipies_data = {
-    Recipies: [{
-        id: 1,
-        name: "Zupa",
-        image_r: img,
-        products: ["vanilla", "chocolate", "pistachio", "hard candy"],
-        short_des: "Krotki opis.",
-        description: "Tutaj bedzie opis."
-    },
-        {
-            id: 2,
-            name: "Chleb",
-            image_r: img,
-            products: ["vanilla", "chocolate", "pistachio", "hard candy"],
-            short_des: "Krotki opis.",
-            description: "Tutaj bedzie opis."
-        },
-        {
-            id: 1,
-            name: "Kanapka",
-            image_r: img,
-            products: ["vanilla", "chocolate", "pistachio", "hard candy"],
-            short_des: "Krotki opis.",
-            description: "Tutaj bedzie opis."
-        },
-        {
-            id: 2,
-            name: "Zapiekanka",
-            image_r: img,
-            products: ["vanilla", "chocolate", "pistachio", "hard candy"],
-            short_des: "Krotki opis.",
-            description: "Tutaj bedzie opis."
-        },
-        {
-            id: 1,
-            name: "Zupa",
-            image_r: img,
-            products: ["vanilla", "chocolate", "pistachio", "hard candy"],
-            short_des: "Krotki opis.",
-            description: "Tutaj bedzie opis."
-        },
-        {
-            id: 2,
-            name: "Chleb",
-            image_r: img,
-            products: ["vanilla", "chocolate", "pistachio", "hard candy"],
-            short_des: "Krotki opis.",
-            description: "Tutaj bedzie opis."
-        },
-        {
-            id: 1,
-            name: "Kanapka",
-            image_r: img,
-            products: ["vanilla", "chocolate", "pistachio", "hard candy"],
-            short_des: "Krotki opis.",
-            description: "Tutaj bedzie opis."
-        },
-        {
-            id: 2,
-            name: "Zapiekanka",
-            image_r: img,
-            products: ["vanilla", "chocolate", "pistachio", "hard candy"],
-            short_des: "Krotki opis.",
-            description: "Tutaj bedzie opis."
-        },
-        {
-            id: 1,
-            name: "Kanapka",
-            image_r: img,
-            products: ["vanilla", "chocolate", "pistachio", "hard candy"],
-            short_des: "Krotki opis.",
-            description: "Tutaj bedzie opis."
-        },
-        {
-            id: 2,
-            name: "Zapiekanka",
-            image_r: img,
-            products: ["vanilla", "chocolate", "pistachio", "hard candy"],
-            short_des: "Krotki opis.",
-            description: "Tutaj bedzie opis."
-        }]
-};
+var chosen_products_ids = [];
 
-function recipyShow() {
-    var wrapper_r = document.getElementById("recipies_wrapper");
+function recipeShow() {
+
+    var wrapper_r = document.getElementById("recipes_wrapper");
     wrapper_r.innerHTML = "";
 
-    recipies_data.Recipies.forEach(function (item) {
-        var article = document.createElement('article'),
-            h2 = document.createElement('h2'),
-            p = document.createElement('p'),
-            id = document.createElement('p'),
-            img = document.createElement('img');
+    recipes.forEach(function (item) {
+
+        let checker = (arr, target) => target.every(v => arr.includes(v));
+        ok = checker(chosen_products_ids, item.products);
+        
+        if (ok){
+
+            var article = document.createElement('article'),
+                h2 = document.createElement('h2'),
+                p = document.createElement('p'),
+                id = document.createElement('p'),
+                img = document.createElement('img');
 
 
-        article.setAttribute('class', 'col-sm');
-        h2.innerHTML = item.name;
-        img.setAttribute('src', item.image_r);
-        img.setAttribute('height', '300');
-        img.setAttribute('width', '300');
-        p.innerHTML = item.short_des;
-        id.innerHTML = item.id;
-        id.hidden = true;
+            article.setAttribute('class', 'col-sm');
+            h2.innerHTML = item.name;
+            img.setAttribute('src', 'static/recipes_img/' + item.img_name);
+            img.setAttribute('height', '300');
+            img.setAttribute('width', '300');
+            p.innerHTML = item.short_description;
+            id.innerHTML = item.id;
+            id.hidden = true;
 
-        var button = document.createElement('a');
-        button.innerHTML = "Szczegoly";
-        button.setAttribute('href', 'recipy.html');
-        button.setAttribute('class', 'btn btn-primary');
-        button.setAttribute('id', item.id);
-        button.setAttribute('onClick', 'reply_click(this.id)');
-        button.setAttribute('target', '_blank')
+            var button = document.createElement('a');
+            button.innerHTML = "Szczegoly";
+            button.setAttribute('href', 'recipe' + '?id=' + item.id);
+            button.setAttribute('class', 'btn btn-primary');
+            button.setAttribute('id', item.id);
+            button.setAttribute('onClick', 'reply_click(this.id)');
+            button.setAttribute('target', '_blank')
 
 
-        var like = document.createElement('button');
-        like.innerHTML = "Ulubione";
+            var like = document.createElement('button');
+            like.innerHTML = "Ulubione";
 
-        article.appendChild(h2);
-        article.appendChild(img);
-        article.appendChild(p);
-        article.appendChild(id);
-        article.appendChild(button);
+            article.appendChild(h2);
+            article.appendChild(img);
+            article.appendChild(p);
+            article.appendChild(id);
+            article.appendChild(button);
 
-        wrapper_r.appendChild(article);
+            wrapper_r.appendChild(article);
+        }
     });
 }
 
@@ -227,6 +166,8 @@ function showProducts(fride_data) {
 
     var moveMe = function () {
         this.table = tables[this.table === tables.Recipy ? 'Fridge' : 'Recipy'];
+        var product_id = this.td.getElementsByClassName("product_id")[0].innerHTML;
+        chosen_products_ids = addOrRemove(chosen_products_ids, parseInt(product_id));
         this.table.tbody.appendChild(this.td);
     };
 
@@ -276,7 +217,7 @@ function showProducts(fride_data) {
         data[key].forEach(function (item) {
             var //tr = document.createElement('tr'),
                 td = document.createElement('td');
-            td.innerHTML = '<img src=' + 'static/products_img/' + item.img_name + ' width="140" height="140"/><p>' + item.name + '</p><br><p>' + item.type + '</p><p hidden>' + item.id + '<p>';
+            td.innerHTML = '<img src=' + 'static/products_img/' + item.img_name + ' width="140" height="140"/><p>' + item.name + '</p><br><p>' + item.type + '</p><p class="product_id" hidden>' + item.id + '<p>';
             //tr.appendChild(td);
             tbody.appendChild(td);
             var button = document.createElement('button');
@@ -298,9 +239,9 @@ function showProducts(fride_data) {
     });
     var search = document.getElementById('wrapper');
     var searchButton = document.createElement("button");
-    //searchButton.setAttribute('onClick','recipySearch()');
-    searchButton.setAttribute('onClick', 'recipyShow()');
-    searchButton.setAttribute('id', "recipySearch")
+    //searchButton.setAttribute('onClick','recipeSearch()');
+    searchButton.setAttribute('onClick', 'recipeShow()');
+    searchButton.setAttribute('id', "recipeSearch")
     searchButton.innerHTML = 'Search';
     search.appendChild(searchButton);
 };

@@ -121,6 +121,6 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "../fridge/static"),
 ]
 
-LOGIN_REDIRECT_URL = 'fridge-home'
+LOGIN_REDIRECT_URL = 'fridge_home'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

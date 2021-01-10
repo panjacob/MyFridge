@@ -8,10 +8,25 @@ def products_to_json(products):
         product_json = {}
         product_json['id'] = product.id
         product_json['name'] = product.name
-        product_json['type'] = product.type.type
+        product_json['type'] = product.type.name
         product_json['img_name'] = product.img_name
         products_arr.append(product_json)
     return json.dumps(products_arr)
+
+
+def products_to_data(products):
+    result = []
+    for product in products:
+        tmp = {}
+        tmp['id'] = product.id
+        tmp['name'] = product.name
+        try:
+            tmp['type'] = product.type.name
+        except:
+            tmp['type'] = "unknown"
+        tmp['img_name'] = product.img_name
+        result.append(tmp)
+    return result
 
 
 def fridgeproducts_to_data(fridgeproducts):
@@ -23,7 +38,7 @@ def fridgeproducts_to_data(fridgeproducts):
         tmp['name'] = fridgeproduct.product.name
         tmp['img_name'] = fridgeproduct.product.img_name
         tmp['type'] = fridgeproduct.product.type.name
-        tmp['product_id'] = fridgeproduct.product.id
+        tmp['id'] = fridgeproduct.product.id
         result.append(tmp)
     return result
 
@@ -43,6 +58,21 @@ def recipes_to_data(recipes):
             products.append(recipeproduct.product.id)
         tmp['products'] = products
         result.append(tmp)
+    return result
+
+
+def recipe_to_data(recipe):
+    result = {}
+    result['id'] = recipe.id
+    result['name'] = recipe.name
+    result['short_description'] = recipe.short_description
+    result['long_description'] = recipe.long_description
+    result['img_name'] = recipe.img_name
+    recipeproducts = models.RecipeProduct.objects.filter(recipe=recipe).all()
+    products = []
+    for recipeproduct in recipeproducts:
+        products.append(recipeproduct.product.name)
+    result['products'] = products
     return result
 
 

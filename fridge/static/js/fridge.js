@@ -1,27 +1,27 @@
-let url_p = 'http://127.0.0.1:8000/products';
-let url_f = 'http://127.0.0.1:8000/fridge';
+//let url_p = 'http://127.0.0.1:8000/products_api';
+let url_f = 'http://127.0.0.1:8000/fridge_api';
 
 
-fetch(url_p)
-    .then(res => res.json())
-    .then((products_json) => {
-        console.log('Checkout this JSON! ', products_json);
+// fetch(url_p)
+//     .then(res => res.json())
+//     .then((products_json) => {
+//         console.log('Checkout this JSON! ', products_json);
 
-        fetch(url_f)
-            .then(res => res.json())
-            .then((fridge_json) => {
-                console.log('Checkout this JSON! ', fridge_json);
+//         fetch(url_f)
+//             .then(res => res.json())
+//             .then((fridge_json) => {
+//                 console.log('Checkout this JSON! ', fridge_json);
 
-                showProducts(products_json, fridge_json)
-            })
-            .catch(err => {
-                throw err
-            });
+//                 showProducts(products_json, fridge_json)
+//             })
+//             .catch(err => {
+//                 throw err
+//             });
 
-    })
-    .catch(err => {
-        throw err
-    });
+//     })
+//     .catch(err => {
+//         throw err
+//     });
 
 
 function filterTable() {
@@ -63,7 +63,7 @@ function productsSearchByName() {
     }
 }
 
-function recipySearch() {
+function recipeSearch() {
 
     var table, td, tds, i, txtValue;
     table = document.getElementById("Fridgekey");
@@ -81,7 +81,8 @@ function recipySearch() {
 
     let cookie = document.getElementById("cid").innerHTML;
 
-    fetch('fridge', {
+    
+    fetch(url_f, {
         method: "POST",
         headers: {"X-CSRFToken": cookie.toString()},
         body: result.toString(),
@@ -158,7 +159,7 @@ function showProducts(prod, frid) {
         data[key].forEach(function (item) {
             var //tr = document.createElement('tr'),
                 td = document.createElement('td');
-            td.innerHTML = '<img src=' + 'static/products_img/' + item.img_name + ' width="140" height="140"/><p>' + item.name + '</p><br><p>' + item.type + '</p><p hidden>' + item.id + '<p>';
+            td.innerHTML = '<img src=' + 'static/products_img/' + item.img_name + ' width="140" height="140"/><p>' + item.name + '</p><br><p>' + item.type.name + '</p><p hidden>' + item.id + '<p>';
             //tr.appendChild(td);
             tbody.appendChild(td);
             var button = document.createElement('button');
@@ -180,9 +181,9 @@ function showProducts(prod, frid) {
     });
     var search = document.getElementById('wrapper');
     var saveButton = document.createElement("button");
-    //searchButton.setAttribute('onClick','recipySearch()');
-    saveButton.setAttribute('onClick', 'recipySearch()');
-    saveButton.setAttribute('id', "recipySearch")
+    //searchButton.setAttribute('onClick','recipeSearch()');
+    saveButton.setAttribute('onClick', 'recipeSearch()');
+    saveButton.setAttribute('id', "recipeSearch")
     saveButton.innerHTML = 'Save';
     search.appendChild(saveButton);
 };
