@@ -93,10 +93,20 @@ function recipeSearch() {
 
 
 function showProducts(prod, frid) {
+
+    //prod = prod.filter(item => !frid.includes(item));
+    var prod_filtered = prod.filter(function(objFromA) {
+        return !frid.find(function(objFromB) {
+        return objFromA.id === objFromB.id
+        })
+    })
+
     var data = {
-        Products: prod,
+        Products: prod_filtered,
         Fridge: frid
     };
+
+
 
     const unique = [...new Set(data.Products.map(item => item.type))];
 
