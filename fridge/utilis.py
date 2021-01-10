@@ -14,6 +14,19 @@ def products_to_json(products):
     return json.dumps(products_arr)
 
 
+def fridgeproducts_to_dictionaries(fridgeproducts):
+    result = []
+    for fridgeproduct in fridgeproducts:
+        tmp = {}
+        tmp['amount'] = fridgeproduct.amount
+        tmp['unit'] = fridgeproduct.unit.name
+        tmp['name'] = fridgeproduct.product.name
+        tmp['img_name'] = fridgeproduct.product.img_name
+        tmp['type'] = fridgeproduct.product.type.name
+        result.append(tmp)
+    return result
+
+
 def get_products_id_from_request(request):
     new_products_id = []
     decoded = request.body.decode('utf-8')

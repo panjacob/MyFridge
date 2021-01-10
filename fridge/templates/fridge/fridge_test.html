@@ -1,16 +1,27 @@
 {% extends "fridge/base.html" %}
+{% load static %}
 
 {% block content %}
+    <script src="{% static 'js/fridge.js' %}" type="text/javascript"></script>
+
     <h1>Fridge test</h1>
-
     <h3>Hello, {{ user }}!</h3>
+    <div id="js-output"></div>
+    <div id="wrapper"></div>
 
-    {% for fridge_product in fridge_products %}
-        <hr>
-        <p>name = {{ fridge_product.product.name }}</p>
-        <p>unit = {{ fridge_product.unit.name }}</p>
-        <p>amount = {{ fridge_product.amount }}</p>
-    {% endfor %}
+    {{ fridgeproducts_data | json_script:"fridgeproducts_data" }}
+    {{ fridge_data | json_script:"fridge_data" }}
+    <script>
+        const fridge_id = JSON.parse(document.getElementById("fridge_data").textContent).id;
+        const fridgeproducts = JSON.parse(document.getElementById("fridgeproducts_data").textContent);
+        fridgeproducts.forEach(fridgeproduct => {
+            document.getElementById("js-output").innerHTML += "<hr>";
+            document.getElementById("js-output").innerHTML += "<p>name = " + fridgeproduct.name + "</p>";
+            document.getElementById("js-output").innerHTML += "<p>unit = " + fridgeproduct.unit + "</p>";
+            document.getElementById("js-output").innerHTML += "<p>amount = " + fridgeproduct.amount + "</p>";
+        });
+        showProducts(fridgeproducts, fridge_id)
+    </script>
 
 {% endblock content %}
 
