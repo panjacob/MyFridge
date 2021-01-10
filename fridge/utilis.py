@@ -40,9 +40,6 @@ def recipes_to_data(recipes):
         recipeproducts = models.RecipeProduct.objects.filter(recipe=recipe).all()
         products = []
         for recipeproduct in recipeproducts:
-            print("Recipe", recipe.name)
-            print("Product", recipeproduct.product.name)
-            print("ID", recipeproduct.product.id)
             products.append(recipeproduct.product.id)
         tmp['products'] = products
         result.append(tmp)
