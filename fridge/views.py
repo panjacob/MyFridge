@@ -29,7 +29,11 @@ def fridge_test(request):
         fridge = fridge.first()
 
     fridgeproducts = models.FridgeProduct.objects.filter(fridge=fridge).all()
-    context["fridgeproducts_data"] = u.fridgeproducts_to_dictionaries(fridgeproducts)
+    context["fridgeproducts_data"] = u.fridgeproducts_to_data(fridgeproducts)
+
+    recipes = models.Recipe.objects.all()
+    context["recipes_data"] = u.recipes_to_data(recipes)
+
     fridge_data = { "id": fridge.id }
     context["fridge_data"] = fridge_data
     return render(request, 'fridge/fridge_test.html', context)

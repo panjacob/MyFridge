@@ -14,7 +14,7 @@ def products_to_json(products):
     return json.dumps(products_arr)
 
 
-def fridgeproducts_to_dictionaries(fridgeproducts):
+def fridgeproducts_to_data(fridgeproducts):
     result = []
     for fridgeproduct in fridgeproducts:
         tmp = {}
@@ -23,6 +23,25 @@ def fridgeproducts_to_dictionaries(fridgeproducts):
         tmp['name'] = fridgeproduct.product.name
         tmp['img_name'] = fridgeproduct.product.img_name
         tmp['type'] = fridgeproduct.product.type.name
+        tmp['product_id'] = fridgeproduct.product.id
+        result.append(tmp)
+    return result
+
+
+def recipes_to_data(recipes):
+    result = []
+    for recipe in recipes:
+        tmp = {}
+        tmp['id'] = recipe.id
+        tmp['name'] = recipe.name
+        tmp['short_description'] = recipe.short_description
+        tmp['long_description'] = recipe.long_description
+        tmp['img_name'] = recipe.img_name
+        recipeproducts = models.RecipeProduct.objects.filter(recipe=recipe).all()
+        products = []
+        for recipeproduct in recipeproducts:
+            products.append(recipeproduct.product.id)
+        tmp['products'] = products
         result.append(tmp)
     return result
 

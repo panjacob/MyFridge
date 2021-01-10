@@ -2,18 +2,23 @@
 {% load static %}
 
 {% block content %}
-    <script src="{% static 'js/fridge.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/fridge_test.js' %}" type="text/javascript"></script>
 
     <h1>Fridge test</h1>
     <h3>Hello, {{ user }}!</h3>
     <div id="js-output"></div>
     <div id="wrapper"></div>
+    <h1 class="mt-5">Recipies :</h1>
+    <div id="recipies_wrapper" class="row"></div>
 
     {{ fridgeproducts_data | json_script:"fridgeproducts_data" }}
     {{ fridge_data | json_script:"fridge_data" }}
+    {{ recipes_data | json_script:"recipes_data" }}
     <script>
         const fridge_id = JSON.parse(document.getElementById("fridge_data").textContent).id;
         const fridgeproducts = JSON.parse(document.getElementById("fridgeproducts_data").textContent);
+        const recipes = JSON.parse(document.getElementById("recipes_data").textContent);
+        
         fridgeproducts.forEach(fridgeproduct => {
             document.getElementById("js-output").innerHTML += "<hr>";
             document.getElementById("js-output").innerHTML += "<p>name = " + fridgeproduct.name + "</p>";

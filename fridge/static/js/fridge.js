@@ -2,26 +2,26 @@ let url_p = 'http://127.0.0.1:8000/products';
 let url_f = 'http://127.0.0.1:8000/fridge';
 
 
-// fetch(url_p)
-//     .then(res => res.json())
-//     .then((products_json) => {
-//         console.log('Checkout this JSON! ', products_json);
+fetch(url_p)
+    .then(res => res.json())
+    .then((products_json) => {
+        console.log('Checkout this JSON! ', products_json);
 
-//         fetch(url_f)
-//             .then(res => res.json())
-//             .then((fridge_json) => {
-//                 console.log('Checkout this JSON! ', fridge_json);
+        fetch(url_f)
+            .then(res => res.json())
+            .then((fridge_json) => {
+                console.log('Checkout this JSON! ', fridge_json);
 
-//                 showProducts(products_json, fridge_json)
-//             })
-//             .catch(err => {
-//                 throw err
-//             });
+                showProducts(products_json, fridge_json)
+            })
+            .catch(err => {
+                throw err
+            });
 
-//     })
-//     .catch(err => {
-//         throw err
-//     });
+    })
+    .catch(err => {
+        throw err
+    });
 
 
 function filterTable() {
