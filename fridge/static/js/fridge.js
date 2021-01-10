@@ -159,7 +159,7 @@ function showProducts(prod, frid) {
         data[key].forEach(function (item) {
             var //tr = document.createElement('tr'),
                 td = document.createElement('td');
-            td.innerHTML = '<img src=' + 'static/products_img/' + item.img_name + ' width="140" height="140"/><p>' + item.name + '</p><br><p>' + item.type.name + '</p><p hidden>' + item.id + '<p>';
+            td.innerHTML = '<img src=' + 'static/products_img/' + item.img_name + ' width="140" height="140"/><p>' + item.name + '</p><br><p>' + item.type + '</p><p hidden>' + item.id + '<p>';
             //tr.appendChild(td);
             tbody.appendChild(td);
             var button = document.createElement('button');
