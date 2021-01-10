@@ -29,7 +29,7 @@ const addOrRemove = (array, item) => {
 function filterTable() {
     let dropdown, table, items, cells, product, filter;
     dropdown = document.getElementById("productDropdown");
-    table = document.getElementById("Fridgeskey");
+    table = document.getElementById("Fridgekey");
     items = table.getElementsByTagName("td");
     filter = dropdown.value;
     for (let item of items) {
@@ -99,6 +99,7 @@ var chosen_products_ids = [];
 function recipeShow() {
 
     var wrapper_r = document.getElementById("recipes_wrapper");
+
     wrapper_r.innerHTML = "";
 
     recipes.forEach(function (item) {
