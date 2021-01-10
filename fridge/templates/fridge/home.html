@@ -2,32 +2,40 @@
 {% load static %}
 
 {% block content %}
-    <script src="{% static 'js/home.js' %}" type="text/javascript"></script>
 
-    {{ fridgeproducts_data | json_script:"fridgeproducts_data" }}
-    {{ fridge_data | json_script:"fridge_data" }}
-    {{ recipes_data | json_script:"recipes_data" }}
+    {% if user.is_authenticated %}
+        <script src="{% static 'js/home.js' %}" type="text/javascript"></script>
 
-    <h1 class="mt-5">Main Page</h1>
+        
+        <a href="/fridge" class="btn btn-primary">Go to Fridge</a>
+        {{ fridgeproducts_data | json_script:"fridgeproducts_data" }}
+        {{ fridge_data | json_script:"fridge_data" }}
+        {{ recipes_data | json_script:"recipes_data" }}
 
-    <p>Strona ma za zadanie pomoc w zmniejszeniu marnowania jedzenia poprzez pomoc w planowaniu posilkow z produktow w naszych lodowkach.</p><br>
-    <p>Zaczynajac powinnismy skierowac sie do naszej lodowki (Przycisk Fridge) by wybrac jej zawartosc.</p><br>
-    <p>Po wybraniu produktow, ktore mamy w lodowce mozemy skierowac sie spowrotem na strone glowna gdzie wybieramy produkty, z ktorych chcemy zrobic posilek.</p><br>
-    <p>Po wybraniu produktow klikamy przycisk Search by wyszukac przepisy z produktow, ktore wybralismy.</p><br>
-    <p>Na dole strony wyswietlaja nam sie przepisy zawierajace produkty z pola Recipe.</p><br>
+        <h1 class="mt-5">Main Page</h1>
 
-    <a href="/fridge" class="btn btn-primary">Go to Fridge</a>
+        <p>Strona ma za zadanie pomoc w zmniejszeniu marnowania jedzenia poprzez pomoc w planowaniu posilkow z produktow w naszych lodowkach.</p><br>
+        <p>Zaczynajac powinnismy skierowac sie do naszej lodowki (Przycisk Fridge) by wybrac jej zawartosc.</p><br>
+        <p>Po wybraniu produktow, ktore mamy w lodowce mozemy skierowac sie spowrotem na strone glowna gdzie wybieramy produkty, z ktorych chcemy zrobic posilek.</p><br>
+        <p>Po wybraniu produktow klikamy przycisk Search by wyszukac przepisy z produktow, ktore wybralismy.</p><br>
+        <p>Na dole strony wyswietlaja nam sie przepisy zawierajace produkty z pola Recipe.</p><br>
 
-    <main role="main" id="wrapper"></main>
+        <a href="/fridge" class="btn btn-primary">Go to Fridge</a>
 
-    <h1 class="mt-5">Recipes :</h1>
-    <div id="recipes_wrapper" class="row"></div>
+        <main role="main" id="wrapper"></main>
 
-    <script>
-        const fridge_id = JSON.parse(document.getElementById("fridge_data").textContent).id;
-        const fridgeproducts = JSON.parse(document.getElementById("fridgeproducts_data").textContent);
-        const recipes = JSON.parse(document.getElementById("recipes_data").textContent);
-        showProducts(fridgeproducts, fridge_id)
-    </script>
+        <h1 class="mt-5">Recipes :</h1>
+        <div id="recipes_wrapper" class="row"></div>
+
+        <script>
+            const fridge_id = JSON.parse(document.getElementById("fridge_data").textContent).id;
+            const fridgeproducts = JSON.parse(document.getElementById("fridgeproducts_data").textContent);
+            const recipes = JSON.parse(document.getElementById("recipes_data").textContent);
+            showProducts(fridgeproducts, fridge_id)
+        </script>
+    {% else %}
+        <h1 class="mt-5">Main Page</h1>
+        <p>To begin using myFridge please log in.</p><br>
+    {% endif %}
 
 {% endblock content %}

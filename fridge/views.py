@@ -9,13 +9,15 @@ def home(request):
     context["title"] = "Home"
     user = request.user
     context["user"] = user
-    fridge = models.Fridge.objects.filter(owner=user).first()
-    fridgeproducts = models.FridgeProduct.objects.filter(fridge=fridge).all()
-    context["fridgeproducts_data"] = u.fridgeproducts_to_data(fridgeproducts)
-    recipes = models.Recipe.objects.all()
-    context["recipes_data"] = u.recipes_to_data(recipes)
-    fridge_data = { "id": fridge.id }
-    context["fridge_data"] = fridge_data
+    if request.user.is_authenticated:
+        fridge = models.Fridge.objects.filter(owner=user).first()
+        fridgeproducts = models.FridgeProduct.objects.filter(fridge=fridge).all()
+        context["fridgeproducts_data"] = u.fridgeproducts_to_data(fridgeproducts)
+        recipes = models.Recipe.objects.all()
+        context["recipes_data"] = u.recipes_to_data(recipes)
+        fridge_data = { "id": fridge.id }
+        context["fridge_data"] = fridge_data
+    
     return render(request, 'fridge/home.html', context)
 
 
