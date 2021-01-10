@@ -154,6 +154,8 @@ function showProducts(fride_data) {
         Recipy: []
     };
 
+    const unique = [...new Set(data.Fridge.map(item => item.type))];
+
     var byName = data.Fridge.slice(0);
     byName.sort(function (a, b) {
         var x = a.name.toLowerCase();
@@ -195,21 +197,14 @@ function showProducts(fride_data) {
             var nod0 = document.createTextNode("All");
             opt0.appendChild(nod0);
             select.appendChild(opt0);
-            var opt = document.createElement("option");
-            opt.setAttribute("value", "fruit");
-            var nod = document.createTextNode("fruit");
-            opt.appendChild(nod);
-            select.appendChild(opt);
-            var opt2 = document.createElement("option");
-            opt2.setAttribute("value", "spice");
-            var nod2 = document.createTextNode("spice");
-            opt2.appendChild(nod2);
-            select.appendChild(opt2);
-            var opt3 = document.createElement("option");
-            opt3.setAttribute("value", "vegetable");
-            var nod3 = document.createTextNode("vegetable");
-            opt3.appendChild(nod3);
-            select.appendChild(opt3);
+
+            unique.forEach(function (item) {
+                var opt = document.createElement("option");
+                opt.setAttribute("value", item);
+                var nod = document.createTextNode(item);
+                opt.appendChild(nod);
+                select.appendChild(opt);
+            });
 
         } else {
             container.setAttribute('id', 'recipy')
