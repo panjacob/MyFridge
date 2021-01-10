@@ -1,0 +1,16 @@
+{% extends "fridge/base.html" %}
+
+{% block content %}
+    <h1>Fridge test</h1>
+
+    <h3>Hello, {{ user }}!</h3>
+
+    {% for fridge_product in fridge_products %}
+        <hr>
+        <p>name = {{ fridge_product.product.name }}</p>
+        <p>unit = {{ fridge_product.unit.name }}</p>
+        <p>amount = {{ fridge_product.amount }}</p>
+    {% endfor %}
+
+{% endblock content %}
+

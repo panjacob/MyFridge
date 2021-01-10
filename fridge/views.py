@@ -16,6 +16,24 @@ def fridge(request):
     return render(request, 'fridge/fridge.html', context)
 
 
+def fridge_test(request):
+    context = {}
+    context["title"] = "Fridge test"
+    user = request.user
+    context["user"] = user
+    fridge = models.Fridge.objects.filter(owner=user)
+    if len(fridge) == 0:
+        fridge = models.Fridge(owner=user)
+        fridge.save()
+    else:
+        fridge = fridge.first()
+
+    fridge_products = models.FridgeProduct.objects.filter(fridge=fridge).all()
+    context["fridge_products"] = fridge_products
+
+    return render(request, 'fridge/fridge_test.html', context)
+
+
 def recipy(request):
     context = {}
     context["title"] = "Recipy"

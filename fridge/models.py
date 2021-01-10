@@ -1,28 +1,28 @@
 from django.db.models import *
+from django.contrib.auth.models import User
 
 
 class Type(Model):
-    type = CharField(max_length=64)
+    name = CharField(max_length=64)
 
 
 class Unit(Model):
-    unit = CharField(max_length=64)
+    name = CharField(max_length=64)
 
 
 class Product(Model):
     name = CharField(max_length=64)
     type = ForeignKey(Type, null=True, on_delete=CASCADE)
     img_name = CharField(max_length=64, null=True)
-    amount = IntegerField(null=True)
-    unit = ForeignKey(Unit,null=True, on_delete=CASCADE)
 
 
 class Fridge(Model):
-    # owner = ForeignKey() id usera ktory jest zalogowany
-    pass
+    owner = ForeignKey(User, on_delete=CASCADE, null=True)
 
 
 class FridgeProduct(Model):
+    amount = IntegerField(null=True)
+    unit = ForeignKey(Unit,null=True, on_delete=CASCADE)
     fridge = ForeignKey(Fridge, null=True, on_delete=CASCADE)
     product = ForeignKey(Product, null=True, on_delete=CASCADE)
 
