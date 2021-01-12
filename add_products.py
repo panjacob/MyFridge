@@ -1,28 +1,26 @@
 # python manage.py makemigrations
 # python manage.py migrate
-# python manage.py shell < add_products.py
 # python manage.py createsuperuser --username admin
+# python manage.py shell < add_products.py
 
 from fridge.models import *
 import json
-from django.contrib.auth.models import User
 
-# u = User.objects.get(username='admin')
-# u.set_password('admin')
-# u.save()
+
 
 with open('fridge/static/products.json') as json_file:
     data = json.load(json_file)
 fridge, ok = Fridge.objects.get_or_create(id=0)
+fridge.owner_id = 1
+fridge.save()
 for x in data:
     print(x['name'])
     product, ok = Product.objects.get_or_create(name=x['name'])
     product.img_name = x['image_name']
     typex, ok = Type.objects.get_or_create(name=x['type'])
-    # unit, ok = Unit.objects.get_or_create(name=x['unit'])
+
     product.type = typex
-    # product.unit = unit
-    # product.amount = int(x['amount'])
+
     product.save()
 
 

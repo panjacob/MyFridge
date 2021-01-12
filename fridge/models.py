@@ -7,7 +7,7 @@ class Type(Model):
 
 
 class Unit(Model):
-    name = CharField(max_length=64)
+    name = CharField(max_length=64, default="")
 
 
 class Product(Model):
@@ -21,8 +21,8 @@ class Fridge(Model):
 
 
 class FridgeProduct(Model):
-    amount = IntegerField(null=True)
-    unit = ForeignKey(Unit,null=True, on_delete=CASCADE)
+    amount = IntegerField(default=1)
+    unit = ForeignKey(Unit, null=False, on_delete=CASCADE, default=0)
     fridge = ForeignKey(Fridge, null=True, on_delete=CASCADE)
     product = ForeignKey(Product, null=True, on_delete=CASCADE)
 

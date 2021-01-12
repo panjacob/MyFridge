@@ -11,15 +11,14 @@ def home(request):
     context["user"] = user
 
     if request.user.is_authenticated:
-        fridge = models.Fridge.objects.get(owner=user)
-        print(fridge)
+        fridge = models.Fridge.objects.get(owner_id=1)
         fridgeproducts = models.FridgeProduct.objects.filter(fridge=fridge).all()
         context["fridgeproducts_data"] = u.fridgeproducts_to_data(fridgeproducts)
         recipes = models.Recipe.objects.all()
         context["recipes_data"] = u.recipes_to_data(recipes)
-        fridge_data = { "id": fridge.id }
+        fridge_data = {"id": fridge.id}
         context["fridge_data"] = fridge_data
-    
+
     return render(request, 'fridge/home.html', context)
 
 
@@ -33,7 +32,7 @@ def fridge(request):
     context["products_data"] = u.products_to_data(products)
     fridgeproducts = models.FridgeProduct.objects.filter(fridge=fridge).all()
     context["fridgeproducts_data"] = u.fridgeproducts_to_data(fridgeproducts)
-    fridge_data = { "id": fridge.id }
+    fridge_data = {"id": fridge.id}
     context["fridge_data"] = fridge_data
     return render(request, 'fridge/fridge.html', context)
 
@@ -51,7 +50,6 @@ def recipe(request):
 # GET - currently unused
 # POST - set specified products (by ids) in the user's fridge
 def get_products_from_fridge(request):
-
     if request.method == 'GET':
         pass
         fridge_product = models.FridgeProduct.objects.filter(fridge=fridge_id)
@@ -70,13 +68,13 @@ def get_products_from_fridge(request):
         fridgeproducts = models.FridgeProduct.objects.filter(fridge=fridge).all()
         for fridgeproduct in fridgeproducts:
             fridgeproduct.delete()
-        
+
         # add new products
         for new_product_id in new_products_id:
             product = models.Product.objects.filter(id=new_product_id).first()
 
             # placeholder unit and amount
-            unit = models.Unit.objects.filter(name="count").first()
+            unit, ok = models.Unit.objects.get_or_create(name="")
             amount = 1
 
             fridgeproduct = models.FridgeProduct(amount=amount, unit=unit, fridge=fridge, product=product)
