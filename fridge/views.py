@@ -9,8 +9,10 @@ def home(request):
     context["title"] = "Home"
     user = request.user
     context["user"] = user
+
     if request.user.is_authenticated:
-        fridge = models.Fridge.objects.filter(owner=user).first()
+        fridge = models.Fridge.objects.get(owner=user)
+        print(fridge)
         fridgeproducts = models.FridgeProduct.objects.filter(fridge=fridge).all()
         context["fridgeproducts_data"] = u.fridgeproducts_to_data(fridgeproducts)
         recipes = models.Recipe.objects.all()

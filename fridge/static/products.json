@@ -943,5 +943,12 @@
     "unit": "",
     "type": "diary",
     "image_name": "Bulgarian_yogurt (1).JPG"
+  },
+  {
+    "name": "Spaghetti",
+    "amount": "1",
+    "unit": "",
+    "type": "pasta",
+    "image_name": "spaghettipasta.jpg"
   }
 ]
