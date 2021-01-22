@@ -196,5 +196,13 @@ function showProducts(prod, frid) {
     saveButton.setAttribute('id', "recipeSearch")
     saveButton.innerHTML = 'Save';
     search.appendChild(saveButton);
+
+    var f = document.getElementById("fridge");
+    var p = document.getElementById("products");
+
+f.setAttribute('id','products');
+p.setAttribute('id','fridge');
 };
+
+
 

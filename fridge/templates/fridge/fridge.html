@@ -4,9 +4,11 @@
 {% block content %}
     <script src="{% static 'js/fridge.js' %}" type="text/javascript"></script>
 
+    <div id="top">
     <h1 class="mt-5">Fridge Page</h1>
 
     <a href="/home" class="btn btn-primary">Go to Home</a>
+    </div>
 
     <main role="main" id="wrapper"></main>
 
@@ -20,6 +22,8 @@
         showProducts(products, fridgeproducts)
     </script>
 
+    <div id="bottom">
     <p id="cid" hidden> {{ csrf_token }} </p>
+    </div>
 
 {% endblock content %}

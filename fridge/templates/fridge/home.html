@@ -7,11 +7,11 @@
         <script src="{% static 'js/home.js' %}" type="text/javascript"></script>
 
         
-        <a href="/fridge" class="btn btn-primary">Go to Fridge</a>
+{#        <a href="/fridge" class="btn btn-primary">Go to Fridge</a>#}
         {{ fridgeproducts_data | json_script:"fridgeproducts_data" }}
         {{ fridge_data | json_script:"fridge_data" }}
         {{ recipes_data | json_script:"recipes_data" }}
-
+        <div id="top">
         <h1 class="mt-5">Main Page</h1>
 
         <p>Strona ma za zadanie pomoc w zmniejszeniu marnowania jedzenia poprzez pomoc w planowaniu posilkow z produktow w naszych lodowkach.</p><br>
@@ -21,11 +21,14 @@
         <p>Na dole strony wyswietlaja nam sie przepisy zawierajace produkty z pola Recipe.</p><br>
 
         <a href="/fridge" class="btn btn-primary">Go to Fridge</a>
+        </div>
 
         <main role="main" id="wrapper"></main>
 
+        <div id="bottom">
         <h1 class="mt-5">Recipes :</h1>
         <div id="recipes_wrapper" class="row"></div>
+        </div>
 
         <script>
             const fridge_id = JSON.parse(document.getElementById("fridge_data").textContent).id;

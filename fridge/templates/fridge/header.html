@@ -10,11 +10,13 @@
                     <p class="w3-xxxlarge">MyFridge</p>
                 </div>
             </a>
+            <div id="login">
             {% if user.is_authenticated %}
                 <a href="/logout" class="btn btn-success btn-lg" role="button">Logout</a>
             {% else %}
                 <a href="/login" class="btn btn-success btn-lg" role="button">Login</a>
             {% endif %}
+            </div>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <div class="dropdown-divider"></div>

@@ -1,35 +1,29 @@
-
-    @media screen and (min-width:960px)  {
-
-    }
-
 .w3-lobster {
   font-family: "Lobster", Sans-serif;
 }
 
 html {
     position: relative;
-    min-height: 100%;
-    min-width: 650px;
+    /*//min-height: 100%;*/
+    min-width: 455px;
 }
 
 body {
-    padding-left: 100px;
-    padding-right: 100px;
     padding-bottom: 60px; /* Margin bottom by footer height */
     background-image: url("https://online.ahu.edu/wp-content/uploads/2019/03/Healthy-Food-Doesnt-Have-To-Be-Expensive.jpg");
-    display: grid;
+    /*//display: grid;*/
 }
 
 .footer {
     position: absolute;
     bottom: 0;
-    width: 100%;
+
     /*margin-left: -100px;*/
     height: 30px; /* Set the fixed height of the footer here */
     line-height: 30px; /* Vertically center the text there */
     background-color:   #E0E0E0;
     letter-spacing: 2px;
+
 }
 
 .header {
@@ -44,13 +38,16 @@ body {
 * {
   box-model: border-box;
 }
+
 body {
   font-family: sans-serif;
 }
+
 #wrapper {
     width: 100%;
     text-align: center;
 }
+
 body .container {
   display: inline-block;
   width: 50%;
@@ -60,18 +57,24 @@ h2 {
   margin: 5px 0;
   color: #666;
 }
+
 table {
     table-layout:fixed;
   width: 100%;
+    padding: 2px;
   border-collapse: collapse;
 }
+
 td {
     width: 150px;
   color: #333;
-  padding: 10px;
-  border: 1px solid #bbb;
+  /*padding: 10px;*/
+     border-radius: 10px;
+  border: 2px solid #bbb;
+
   position: relative;
 }
+
 td button {
   position: absolute;
   right: 5px;
@@ -81,6 +84,7 @@ td button {
   background: #fff;
   font-size: 12px;
 }
+
 td button:hover {
   outline: none;
   border-color: #888;
@@ -93,11 +97,13 @@ table {
     width: 100%;
     display:block;
 }
+
 thead {
     display: inline-block;
     width: 100%;
     height: 20px;
 }
+
 tbody {
     height: 300px;
     display: inline-block;
@@ -120,8 +126,6 @@ article {
     grid-column-gap: 1%;
 }
 
-
-
 #recipeSearch  {
   border: 2px solid #ccc;
   border-radius: 5px;
@@ -134,4 +138,123 @@ article {
 select {
     margin-left: 5px;
     height: 40px;
+}
+
+#fridge {
+    grid-area: fridge_table;
+}
+
+#recipy {
+    grid-area: recipy_table;
+}
+
+#products {
+    grid-area: recipy_table;
+}
+
+    #recipeSearch{
+        grid-area: recipy_button;
+    }
+
+
+#top {
+    grid-area: top;
+    width: 50%;
+}
+
+#bottom {
+    grid-area: bottom;
+    width: 50%;
+}
+
+
+@media only screen
+and (max-width : 1223px)
+and (min-width : 455px) {
+
+    body{
+        padding-left: 1%;
+        padding-right: 1%;
+    }
+
+    .footer{
+            width: 98%;
+    }
+
+    #recipeSearch{
+        width: 50%;
+        margin-left: 0%;
+    }
+
+    #fridge{
+        margin: 0px;
+    }
+
+    #products{
+        margin: 0px;
+    }
+
+    #recipy{
+        margin: 0px;
+    }
+
+    #wrapper {
+        padding: -50%;
+        margin: 0px;
+             grid-area: wrapper;
+        display: grid;
+    grid-template-columns:100%;
+  grid-template-areas:
+    'fridge_table'
+    'recipy_table'
+    'recipy_button';
+        justify-content: center;
+    }
+
+#content {
+  display: grid;
+    grid-template-columns:100% 100%;
+  grid-template-areas:
+  'top top'
+    'wrapper wrapper'
+'bottom bottom';
+}
+
+}
+
+
+/* Desktops and laptops ----------- */
+@media only screen
+and (min-width : 1224px) {
+
+    body{
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .footer{
+            width: 90%;
+    }
+
+    #top {
+    width: 50%;
+}
+
+#bottom {
+    width: 50%;
+}
+
+
+#content {
+  display: grid;
+    grid-template-columns:100% 100%;
+  grid-template-areas:
+  'top top'
+    'fridge_table recipy_table'
+    'fridge_table recipy_table'
+'bottom bottom';
+  grid-gap: 10px;
+  padding: 10px;
+}
+
 }
