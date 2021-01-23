@@ -43,6 +43,11 @@ body {
   font-family: sans-serif;
 }
 
+img{
+    border: 1px solid black;
+    margin: 5px;
+}
+
 #wrapper {
     width: 100%;
     text-align: center;
@@ -220,6 +225,12 @@ and (min-width : 455px) {
 'bottom bottom';
 }
 
+#recipes_wrapper {
+  display: grid;
+  grid-template-columns: repeat(1, 100%);
+    grid-column-gap: 0%;
+}
+
 }
 
 
@@ -255,6 +266,12 @@ and (min-width : 1224px) {
 'bottom bottom';
   grid-gap: 10px;
   padding: 10px;
+}
+
+#recipes_wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 49%);
+    grid-column-gap: 1%;
 }
 
 }

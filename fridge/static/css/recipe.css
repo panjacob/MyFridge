@@ -24,6 +24,7 @@ main {
     grid-area: image;
     justify-content: center;
     border: 1px solid black;
+    margin: 5px;
 }
 
 .item4 {
@@ -56,4 +57,56 @@ main {
     border: 1px solid black;
     width : 300px;
     text-align: center;
+}
+
+
+@media only screen
+and (max-width : 1223px)
+and (min-width : 455px) {
+
+    #wrapper {
+        width: 50%;
+  display: grid;
+  grid-template-areas:
+    'image image'
+    'header header'
+    'menu menu'
+    'right right';
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+    #ingridients{
+        width: 100%;
+    }
+
+    .item3{
+        width: 97%;
+        height: 100%;
+        margin-bottom: 0%;
+    }
+    .item1{
+        width: 100%;
+    }
+    .item4{
+        width: 100%;
+    }
+
+}
+
+/* Desktops and laptops ----------- */
+@media only screen
+and (min-width : 1224px) {
+
+   #wrapper {
+  display: grid;
+  grid-template-areas:
+    'image image header header header header header'
+    'image image right right right right right'
+    'menu menu right right right right right'
+    'menu menu right right right right right';
+  grid-gap: 10px;
+  padding: 10px;
+}
+
 }
