@@ -39,7 +39,7 @@ def fridge(request):
 
 def recipe(request):
     context = {}
-    context["title"] = "Recipy"
+    context["title"] = "Recipes"
     recipe_id = request.GET.get('id', 1)
     recipe = models.Recipe.objects.filter(id=recipe_id).first()
     context["recipe_data"] = u.recipe_to_data(recipe)
