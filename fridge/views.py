@@ -11,7 +11,7 @@ def home(request):
     context["user"] = user
 
     if request.user.is_authenticated:
-        fridge = models.Fridge.objects.get(owner_id=1)
+        fridge = models.Fridge.objects.filter(owner=user).first()
         fridgeproducts = models.FridgeProduct.objects.filter(fridge=fridge).all()
         context["fridgeproducts_data"] = u.fridgeproducts_to_data(fridgeproducts)
         recipes = models.Recipe.objects.all()
