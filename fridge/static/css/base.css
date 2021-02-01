@@ -5,13 +5,16 @@
 html {
     position: relative;
     /*//min-height: 100%;*/
-    min-width: 455px;
+    /*min-width: 455px;*/
+    width: 100%;
 }
 
 body {
     padding-bottom: 60px; /* Margin bottom by footer height */
     background-image: url("https://online.ahu.edu/wp-content/uploads/2019/03/Healthy-Food-Doesnt-Have-To-Be-Expensive.jpg");
     /*//display: grid;*/
+    background-size: auto;
+    width:100%;
 }
 
 .footer {
@@ -46,6 +49,12 @@ body {
 img{
     border: 1px solid black;
     margin: 5px;
+}
+
+#recipy_img{
+    width: 250px;
+    width: 250px;
+    /*object-fit: contain;*/
 }
 
 #wrapper {
@@ -137,7 +146,7 @@ article {
   background: #fff;
   font-size: 30px;
     margin-top: 25px;
-    margin-left: 50%;
+    /*margin-left: 50%;*/
 }
 
 select {
@@ -170,6 +179,67 @@ select {
 #bottom {
     grid-area: bottom;
     width: 50%;
+}
+
+
+@media only screen
+and (max-width : 454px) {
+
+    body{
+        padding-left: 1%;
+        padding-right: 1%;
+    }
+
+    .footer{
+            width: 98%;
+    }
+
+    #recipeSearch{
+        width: 50%;
+        margin-left: 0%;
+    }
+
+    #fridge{
+        margin: 0px;
+    }
+
+    #products{
+        margin: 0px;
+    }
+
+    #recipy{
+        margin: 0px;
+    }
+
+    #wrapper {
+        padding: -50%;
+        margin: 0px;
+             grid-area: wrapper;
+        display: grid;
+    grid-template-columns:100%;
+  grid-template-areas:
+    'fridge_table'
+    'recipy_table'
+    'recipy_button';
+        justify-content: center;
+    }
+
+#content {
+  display: grid;
+    grid-template-columns:100% 100%;
+  grid-template-areas:
+  'top top'
+    'wrapper wrapper'
+'bottom bottom';
+}
+
+#recipes_wrapper {
+  display: grid;
+  grid-template-columns: repeat(1, 100%);
+    grid-column-gap: 0%;
+    margin-right: 0px;
+}
+
 }
 
 
@@ -228,7 +298,7 @@ and (min-width : 455px) {
 #recipes_wrapper {
   display: grid;
   grid-template-columns: repeat(1, 100%);
-    grid-column-gap: 0%;
+    margin-right: 0px;
 }
 
 }
@@ -237,6 +307,10 @@ and (min-width : 455px) {
 /* Desktops and laptops ----------- */
 @media only screen
 and (min-width : 1224px) {
+
+    .w3-lobster{
+        display: none;
+    }
 
     body{
         padding-left: 5%;
@@ -272,6 +346,7 @@ and (min-width : 1224px) {
   display: grid;
   grid-template-columns: repeat(2, 49%);
     grid-column-gap: 1%;
+    margin-right: 0px;
 }
 
 }

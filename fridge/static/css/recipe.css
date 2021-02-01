@@ -46,6 +46,12 @@ main {
   padding: 10px;
 }
 
+/*#recipy_img{*/
+/*    width: 140px;*/
+/*    height: 140px;*/
+/*    !*object-fit: contain;*!*/
+/*}*/
+
 #wrapper {
 
     border: 3px solid black;
@@ -59,6 +65,44 @@ main {
     text-align: center;
 }
 
+@media only screen
+and (max-width : 454px) {
+
+    header{
+        display: none;
+    }
+
+    #wrapper {
+        width: 50%;
+  display: grid;
+  grid-template-areas:
+    'image image'
+    'header header'
+    'menu menu'
+    'right right';
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+    #ingridients{
+        width: 100%;
+    }
+
+    .item3{
+        width: 97%;
+        height: 100%;
+        margin-bottom: 0%;
+        display: none;
+    }
+    .item1{
+        width: 100%;
+    }
+    .item4{
+        width: 100%;
+    }
+
+
+}
 
 @media only screen
 and (max-width : 1223px)

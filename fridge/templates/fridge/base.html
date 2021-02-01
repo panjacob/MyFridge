@@ -42,15 +42,17 @@
   <!-- HEADER -->
   {% include "fridge/header.html" %}
 
-  <div style="background:rgba(255,255,255, 0.9); padding: 25px;" id="content" name="content">
-    <!-- MESSAGES -->
-    {% if messages %}
+
+      {% if messages %}
     {% for message in messages %}
     <div class="alert alert-{{ message.tags }}">
       {{ message }}
     </div>
     {% endfor %}
     {% endif %}
+  <div style="background:rgba(255,255,255, 0.9); padding: 25px;" id="content" name="content">
+    <!-- MESSAGES -->
+
 
     <!-- CONTENT -->
     <div style="padding: 25px;" id="content" name="content">

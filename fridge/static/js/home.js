@@ -119,8 +119,9 @@ function recipeShow() {
             article.setAttribute('class', 'col-sm');
             h2.innerHTML = item.name;
             img.setAttribute('src', 'static/recipes_img/' + item.img_name);
-            img.setAttribute('height', '300');
-            img.setAttribute('width', '300');
+            //img.setAttribute('height', '300');
+            //img.setAttribute('width', '300');
+            img.setAttribute('id','recipy_img');
             p.innerHTML = item.short_description;
             id.innerHTML = item.id;
             id.hidden = true;
